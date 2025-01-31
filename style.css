@@ -1,0 +1,4204 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+  scroll-behavior: smooth; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: cover;
+  background-position-x: 100%; }
+
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  margin-block: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background-color: #00ed82; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; }
+
+body {
+  height: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative; }
+  body .section {
+    width: 100%;
+    height: 100%; }
+    body .section .first-section {
+      height: 50%;
+      width: 100%;
+      background-image: linear-gradient(0deg, transparent 60%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.4) 100%), url("./huluLogin-img/main-background.png");
+      background-size: cover;
+      background-position-x: 99%;
+      background-position-y: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      body .section .first-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0px 50px 50px 0px black; }
+      body .section .first-section .fs-top {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 9999999; }
+        body .section .first-section .fs-top .fst-img {
+          width: 70px;
+          height: 90%;
+          margin-top: 35px;
+          margin-left: 70px; }
+          body .section .first-section .fs-top .fst-img img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain; }
+        body .section .first-section .fs-top .fst-btn {
+          width: 100px;
+          height: 50px;
+          margin-top: 25px;
+          margin-right: 55px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          cursor: pointer; }
+          body .section .first-section .fs-top .fst-btn p {
+            text-align: center;
+            color: #a8afbd;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: "Varela Round", sans-serif; }
+          body .section .first-section .fs-top .fst-btn:hover {
+            background-color: #48494b; }
+            body .section .first-section .fs-top .fst-btn:hover p {
+              color: white; }
+        body .section .first-section .fs-top .fst-hamburger {
+          display: none; }
+      body .section .first-section .responsivePopUp {
+        display: none; }
+      body .section .first-section .loginPopUp {
+        z-index: 9999999999;
+        box-sizing: border-box;
+        height: auto;
+        overflow-y: auto;
+        width: 100%;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.514); }
+        body .section .first-section .loginPopUp .popUp {
+          width: 750px;
+          height: 2780px;
+          margin-bottom: 30px;
+          background-color: white;
+          margin-block: 10px; }
+          body .section .first-section .loginPopUp .popUp .lp-close {
+            width: 100%;
+            height: 25px; }
+            body .section .first-section .loginPopUp .popUp .lp-close .fa-xmark {
+              display: flex;
+              justify-content: end;
+              margin: 25px 30px 0 0;
+              font-size: 30px;
+              color: #a8afbd; }
+          body .section .first-section .loginPopUp .popUp .lp-top {
+            width: 100%;
+            padding: 0px 40px 0 40px; }
+            body .section .first-section .loginPopUp .popUp .lp-top .lp-login {
+              font-size: 30px;
+              font-family: "Varela Round", sans-serif;
+              font-weight: 700;
+              margin-left: 5px; }
+            body .section .first-section .loginPopUp .popUp .lp-top .lp-info {
+              width: 85%;
+              height: 100px;
+              line-height: 30px;
+              margin-left: 5px; }
+              body .section .first-section .loginPopUp .popUp .lp-top .lp-info p {
+                font-size: 18px;
+                color: #616368;
+                font-family: "Ubuntu", sans-serif;
+                word-spacing: 2px; }
+                body .section .first-section .loginPopUp .popUp .lp-top .lp-info p a {
+                  color: cornflowerblue;
+                  margin-left: 3px; }
+          body .section .first-section .loginPopUp .popUp .lp-middle {
+            width: 100%;
+            height: 300px; }
+            body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs {
+              margin-bottom: 40px;
+              padding-left: 50px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lp-email {
+                color: #48494b;
+                font-size: 15px;
+                font-family: "Varela Round", sans-serif;
+                font-weight: 700;
+                margin-bottom: 10px;
+                letter-spacing: 3px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpe-i {
+                border: 2px solid #48494b;
+                width: 630px;
+                height: 35px;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                color: #48494b;
+                font-size: 20px;
+                margin-bottom: 20px;
+                padding: 10px 0 10px 20px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lp-password {
+                color: #48494b;
+                font-size: 15px;
+                font-family: "Varela Round", sans-serif;
+                font-weight: 700;
+                margin-bottom: 10px;
+                letter-spacing: 3px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpp-i {
+                border: 2px solid #48494b;
+                width: 630px;
+                height: 35px;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                color: #48494b;
+                font-size: 20px;
+                padding: 10px 0 10px 20px; }
+            body .section .first-section .loginPopUp .popUp .lp-middle .lpm-forgot {
+              margin-left: 50px;
+              font-family: "Varela Round", sans-serif;
+              color: cornflowerblue;
+              font-size: 17px;
+              top: 0; }
+            body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn {
+              width: 652px;
+              height: 60px;
+              background-color: #989da7;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: 50px;
+              border-radius: 6px;
+              margin-top: 35px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn p {
+                font-size: 20px;
+                font-family: "Varela Round", sans-serif;
+                color: white; }
+            body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn {
+              width: 652px;
+              height: 60px;
+              background-color: #00ed82;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: 50px;
+              border-radius: 6px;
+              margin-top: 10px;
+              cursor: pointer; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn:hover {
+                background-color: #094429; }
+                body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn:hover p {
+                  color: white; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn p {
+                font-size: 20px;
+                font-family: "Varela Round", sans-serif;
+                color: black;
+                pointer-events: none; }
+          body .section .first-section .loginPopUp .popUp .lp-bottom {
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin-top: 100px; }
+            body .section .first-section .loginPopUp .popUp .lp-bottom p {
+              margin-top: 50px;
+              font-family: "Varela Round", sans-serif;
+              color: #616368;
+              font-size: 18px; }
+            body .section .first-section .loginPopUp .popUp .lp-bottom a {
+              margin-top: 50px;
+              font-family: "Varela Round", sans-serif;
+              margin-left: 10px;
+              color: cornflowerblue;
+              font-size: 18px; }
+      body .section .first-section .registerPopUp {
+        z-index: 9999999999;
+        box-sizing: border-box;
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.514); }
+        body .section .first-section .registerPopUp .resPop {
+          width: 750px;
+          height: 480px;
+          background-color: white;
+          position: fixed; }
+          body .section .first-section .registerPopUp .resPop .rp-close {
+            width: 100%;
+            height: 25px; }
+            body .section .first-section .registerPopUp .resPop .rp-close .fa-chevron-left {
+              display: flex;
+              justify-content: end;
+              margin: 25px 30px 0 0;
+              font-size: 30px;
+              color: #a8afbd; }
+          body .section .first-section .registerPopUp .resPop .rp-login {
+            font-size: 30px;
+            font-family: "Varela Round", sans-serif;
+            font-weight: 700;
+            margin-left: 40px; }
+          body .section .first-section .registerPopUp .resPop .rp-container {
+            width: 100%;
+            padding: 40px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs {
+              margin-bottom: 40px; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rp-email {
+                color: #48494b;
+                font-size: 15px;
+                font-family: "Varela Round", sans-serif;
+                font-weight: 700;
+                margin-bottom: 10px;
+                letter-spacing: 3px; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpe-i {
+                border: 2px solid #48494b;
+                width: 630px;
+                height: 35px;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                color: #48494b;
+                font-size: 20px;
+                margin-bottom: 20px;
+                padding: 10px 0 10px 20px; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rp-password {
+                color: #48494b;
+                font-size: 15px;
+                font-family: "Varela Round", sans-serif;
+                font-weight: 700;
+                margin-bottom: 10px;
+                letter-spacing: 3px; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpp-i {
+                border: 2px solid #48494b;
+                width: 630px;
+                height: 35px;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                color: #48494b;
+                font-size: 20px;
+                padding: 10px 0 10px 20px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn {
+              width: 652px;
+              height: 60px;
+              background-color: #00ed82;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 6px;
+              margin-top: 60px;
+              cursor: pointer; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn:hover {
+                background-color: #094429; }
+                body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn:hover p {
+                  color: white; }
+              body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn p {
+                font-size: 20px;
+                font-family: "Varela Round", sans-serif;
+                color: black;
+                pointer-events: none; }
+      body .section .first-section .terms-popUp {
+        z-index: 99999999;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.514);
+        display: none;
+        justify-content: center;
+        position: absolute; }
+        body .section .first-section .terms-popUp .tp-p {
+          margin-top: 550px;
+          width: 1100px;
+          height: 200px;
+          background-color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          position: relative; }
+          body .section .first-section .terms-popUp .tp-p .tp-c {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 35px;
+            top: 25px; }
+            body .section .first-section .terms-popUp .tp-p .tp-c .fa-x {
+              font-size: 30px;
+              color: #616368;
+              object-fit: cover;
+              font-weight: lighter; }
+          body .section .first-section .terms-popUp .tp-p .tp-1 {
+            margin-left: 10px;
+            width: 85%;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 19px; }
+            body .section .first-section .terms-popUp .tp-p .tp-1 a {
+              color: cornflowerblue; }
+          body .section .first-section .terms-popUp .tp-p .tp-2 {
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 85%;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 19px; }
+            body .section .first-section .terms-popUp .tp-p .tp-2 a {
+              color: cornflowerblue; }
+      body .section .first-section .fs-middle {
+        z-index: 9999999;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 48px; }
+        body .section .first-section .fs-middle p {
+          padding: 8px;
+          text-align: center;
+          color: #00ed82;
+          font-size: 15px;
+          font-weight: 600;
+          font-family: "Varela Round", sans-serif;
+          pointer-events: none; }
+        body .section .first-section .fs-middle .fsm-image {
+          width: 500px;
+          height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 10px; }
+          body .section .first-section .fs-middle .fsm-image img {
+            height: 60%;
+            width: 100%;
+            object-fit: contain; }
+          body .section .first-section .fs-middle .fsm-image p {
+            text-align: center;
+            margin-top: 10px;
+            height: 30px;
+            width: 800px;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 30px;
+            color: white;
+            font-weight: 500;
+            pointer-events: none; }
+        body .section .first-section .fs-middle .getB-btn {
+          height: 60px;
+          width: 850px;
+          background-color: #00ed82;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          cursor: pointer; }
+          body .section .first-section .fs-middle .getB-btn:hover {
+            opacity: 60%; }
+          body .section .first-section .fs-middle .getB-btn a {
+            text-align: center;
+            font-size: 20px;
+            font-family: "Varela Round", sans-serif;
+            color: black;
+            font-weight: 600; }
+        body .section .first-section .fs-middle .fs-terms {
+          margin-top: 20px;
+          font-size: 18px;
+          color: white;
+          text-decoration: underline;
+          font-family: "Ubuntu", sans-serif;
+          cursor: pointer; }
+        body .section .first-section .fs-middle .fs-SingUp {
+          margin-top: 40px;
+          font-size: 22px;
+          color: white;
+          text-decoration: underline;
+          font-family: "Ubuntu", sans-serif;
+          cursor: pointer; }
+      body .section .first-section .fs-bottom {
+        z-index: 9999999;
+        width: 100%;
+        height: 190px;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.514); }
+        body .section .first-section .fs-bottom .fsb-left {
+          height: 58%;
+          width: 25%;
+          margin-left: 35px; }
+          body .section .first-section .fs-bottom .fsb-left img {
+            width: 98%;
+            height: 100%;
+            object-fit: contain;
+            padding-top: 30px; }
+        body .section .first-section .fs-bottom .fsb-center {
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+          justify-content: center;
+          width: 50%;
+          margin-left: 15px;
+          gap: 15px;
+          pointer-events: none; }
+          body .section .first-section .fs-bottom .fsb-center p {
+            color: #00ed82;
+            font-size: 15px;
+            font-family: "Varela Round", sans-serif;
+            font-weight: 500;
+            margin-left: 23px; }
+          body .section .first-section .fs-bottom .fsb-center h2 {
+            color: white;
+            font-family: "Varela Round", sans-serif;
+            font-weight: 400;
+            font-size: 30px;
+            margin-left: 23px; }
+        body .section .first-section .fs-bottom .fsb-right {
+          width: 25%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          body .section .first-section .fs-bottom .fsb-right .fsbr-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 60px;
+            background-color: #00ed82;
+            border-radius: 5px;
+            margin-left: 60px;
+            margin-top: 35px;
+            cursor: pointer; }
+            body .section .first-section .fs-bottom .fsb-right .fsbr-btn:hover {
+              opacity: 60%; }
+            body .section .first-section .fs-bottom .fsb-right .fsbr-btn .fsbrb-a {
+              width: 100%;
+              color: black;
+              text-decoration: none;
+              text-align: center;
+              font-weight: 600;
+              font-size: 18px;
+              font-family: "Ubuntu", sans-serif;
+              margin-bottom: 10px;
+              transform: translateX(-30px); }
+          body .section .first-section .fs-bottom .fsb-right a {
+            margin-top: 10px;
+            margin-left: 60px;
+            color: #a8afbd;
+            font-size: 13px;
+            text-decoration: underline;
+            font-family: "Varela Round", sans-serif; }
+            body .section .first-section .fs-bottom .fsb-right a:hover {
+              text-decoration: none; }
+    body .section .second-section {
+      height: 115%;
+      width: 100%;
+      background-color: #101013;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      body .section .second-section .ss-top {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 110px;
+        margin-bottom: 70px; }
+        body .section .second-section .ss-top p:first-child {
+          color: #00ed82;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 15px;
+          font-weight: 600;
+          margin-bottom: 10px; }
+        body .section .second-section .ss-top h1 {
+          color: white;
+          font-size: 60px;
+          font-family: "Ubuntu", sans-serif;
+          margin-top: 10px;
+          margin-bottom: 40px; }
+        body .section .second-section .ss-top p:last-child {
+          width: 1000px;
+          height: 30px;
+          text-align: center;
+          color: white;
+          font-family: "Varela Round", sans-serif;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 10px;
+          margin-left: 50px; }
+      body .section .second-section .ss-middle {
+        width: 100%;
+        height: 1500px;
+        display: flex;
+        gap: 30px;
+        margin-left: 120px; }
+        body .section .second-section .ss-middle .chapter-1,
+        body .section .second-section .ss-middle .chapter-2,
+        body .section .second-section .ss-middle .chapter-3,
+        body .section .second-section .ss-middle .chapter-4 {
+          cursor: pointer;
+          position: relative;
+          height: 570px;
+          width: 370px; }
+          body .section .second-section .ss-middle .chapter-1::after,
+          body .section .second-section .ss-middle .chapter-2::after,
+          body .section .second-section .ss-middle .chapter-3::after,
+          body .section .second-section .ss-middle .chapter-4::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 900px 0px 100px rgba(0, 0, 0, 0.4); }
+          body .section .second-section .ss-middle .chapter-1 img,
+          body .section .second-section .ss-middle .chapter-2 img,
+          body .section .second-section .ss-middle .chapter-3 img,
+          body .section .second-section .ss-middle .chapter-4 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+          body .section .second-section .ss-middle .chapter-1 .c1-h,
+          body .section .second-section .ss-middle .chapter-1 .c2-h,
+          body .section .second-section .ss-middle .chapter-1 .c3-h,
+          body .section .second-section .ss-middle .chapter-1 .c4-h,
+          body .section .second-section .ss-middle .chapter-2 .c1-h,
+          body .section .second-section .ss-middle .chapter-2 .c2-h,
+          body .section .second-section .ss-middle .chapter-2 .c3-h,
+          body .section .second-section .ss-middle .chapter-2 .c4-h,
+          body .section .second-section .ss-middle .chapter-3 .c1-h,
+          body .section .second-section .ss-middle .chapter-3 .c2-h,
+          body .section .second-section .ss-middle .chapter-3 .c3-h,
+          body .section .second-section .ss-middle .chapter-3 .c4-h,
+          body .section .second-section .ss-middle .chapter-4 .c1-h,
+          body .section .second-section .ss-middle .chapter-4 .c2-h,
+          body .section .second-section .ss-middle .chapter-4 .c3-h,
+          body .section .second-section .ss-middle .chapter-4 .c4-h {
+            z-index: 9999999;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            color: white;
+            margin-top: 15px;
+            font-weight: 300;
+            margin-left: 20px; }
+            body .section .second-section .ss-middle .chapter-1 .c1-h p,
+            body .section .second-section .ss-middle .chapter-1 .c2-h p,
+            body .section .second-section .ss-middle .chapter-1 .c3-h p,
+            body .section .second-section .ss-middle .chapter-1 .c4-h p,
+            body .section .second-section .ss-middle .chapter-2 .c1-h p,
+            body .section .second-section .ss-middle .chapter-2 .c2-h p,
+            body .section .second-section .ss-middle .chapter-2 .c3-h p,
+            body .section .second-section .ss-middle .chapter-2 .c4-h p,
+            body .section .second-section .ss-middle .chapter-3 .c1-h p,
+            body .section .second-section .ss-middle .chapter-3 .c2-h p,
+            body .section .second-section .ss-middle .chapter-3 .c3-h p,
+            body .section .second-section .ss-middle .chapter-3 .c4-h p,
+            body .section .second-section .ss-middle .chapter-4 .c1-h p,
+            body .section .second-section .ss-middle .chapter-4 .c2-h p,
+            body .section .second-section .ss-middle .chapter-4 .c3-h p,
+            body .section .second-section .ss-middle .chapter-4 .c4-h p {
+              font-size: 15px;
+              font-family: "Varela Round", sans-serif;
+              margin-top: 15px;
+              margin-left: 15px; }
+            body .section .second-section .ss-middle .chapter-1 .c1-h h3,
+            body .section .second-section .ss-middle .chapter-1 .c2-h h3,
+            body .section .second-section .ss-middle .chapter-1 .c3-h h3,
+            body .section .second-section .ss-middle .chapter-1 .c4-h h3,
+            body .section .second-section .ss-middle .chapter-2 .c1-h h3,
+            body .section .second-section .ss-middle .chapter-2 .c2-h h3,
+            body .section .second-section .ss-middle .chapter-2 .c3-h h3,
+            body .section .second-section .ss-middle .chapter-2 .c4-h h3,
+            body .section .second-section .ss-middle .chapter-3 .c1-h h3,
+            body .section .second-section .ss-middle .chapter-3 .c2-h h3,
+            body .section .second-section .ss-middle .chapter-3 .c3-h h3,
+            body .section .second-section .ss-middle .chapter-3 .c4-h h3,
+            body .section .second-section .ss-middle .chapter-4 .c1-h h3,
+            body .section .second-section .ss-middle .chapter-4 .c2-h h3,
+            body .section .second-section .ss-middle .chapter-4 .c3-h h3,
+            body .section .second-section .ss-middle .chapter-4 .c4-h h3 {
+              font-family: "Ubuntu", sans-serif;
+              font-size: 25px;
+              margin-top: 15px;
+              margin-left: 15px;
+              font-weight: 300; }
+      body .section .second-section .ss-bottom {
+        width: 100%;
+        height: 1100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Ubuntu", sans-serif; }
+        body .section .second-section .ss-bottom p:nth-child(1) {
+          margin-top: 10px;
+          color: #00ed82;
+          font-size: 20px;
+          font-weight: 600;
+          pointer-events: none; }
+        body .section .second-section .ss-bottom h1 {
+          margin-top: 35px;
+          color: white;
+          font-size: 60px;
+          pointer-events: none; }
+        body .section .second-section .ss-bottom p:nth-child(3) {
+          margin-top: 35px;
+          width: 60%;
+          color: white;
+          text-align: center;
+          font-size: 23px;
+          pointer-events: none; }
+        body .section .second-section .ss-bottom p:nth-child(4) {
+          margin-top: 40px;
+          width: 50%;
+          font-size: 12px;
+          color: #989da7;
+          text-align: center;
+          pointer-events: none; }
+        body .section .second-section .ss-bottom a {
+          margin-top: 40px;
+          color: #d0d5df;
+          text-decoration: underline;
+          font-family: "Varela Round", sans-serif;
+          font-size: 25px;
+          font-weight: 700; }
+        body .section .second-section .ss-bottom .ssb-down {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          body .section .second-section .ss-bottom .ssb-down .fa-chevron-down {
+            -webkit-animation: move-up-and-down 1s infinite alternate;
+            -moz-animation: move-up-and-down 1s infinite alternate;
+            -o-animation: move-up-and-down 1s infinite alternate;
+            animation: move-up-and-down 1s infinite alternate; }
+@keyframes move-up-and-down {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-15px); } }
+    body .section .third-section {
+      width: 300%;
+      height: 50%;
+      display: flex; }
+      body .section .third-section .ts-bg-container .ts-navbar {
+        position: absolute;
+        z-index: 99999;
+        display: flex;
+        color: white;
+        width: 500px;
+        height: 100px;
+        margin: 250px 0 0 230px;
+        justify-content: space-between;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        cursor: pointer; }
+        body .section .third-section .ts-bg-container .ts-navbar .tsn-white-underline {
+          width: 101px;
+          height: 6px;
+          background-color: white;
+          position: absolute;
+          margin-top: 40px; }
+      body .section .third-section .ts-bg-container .tsn-ls-bg {
+        height: 1020px;
+        width: 1800px;
+        background-image: url(huluLogin-img/unset.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        overflow: hidden; }
+        body .section .third-section .ts-bg-container .tsn-ls-bg::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+        body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info h1 {
+          z-index: 999999;
+          color: white;
+          font-weight: 700;
+          font-family: "Ubuntu", sans-serif;
+          position: absolute;
+          margin: 355px 0 0 230px;
+          font-size: 60px;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-about {
+          z-index: 999999;
+          width: 700px;
+          color: white;
+          font-weight: 700;
+          position: absolute;
+          margin: 460px 0 0 230px;
+          font-size: 23px;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 100;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons {
+          z-index: 9999;
+          width: 350px;
+          height: 100px;
+          display: flex;
+          position: absolute;
+          margin: 580px 0 0 230px;
+          justify-content: space-between; }
+          body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs,
+          body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn,
+          body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs img,
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn img,
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 img {
+              height: 50%;
+              width: 50%;
+              object-fit: contain; }
+        body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info p {
+          z-index: 9999;
+          font-size: 12px;
+          margin: 690px 0 0 230px;
+          color: #a1a1a1;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          pointer-events: none;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info a {
+          z-index: 9999;
+          margin: 690px 0 0 675px;
+          text-decoration: underline;
+          color: #a1a1a1;
+          font-size: 12px;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          cursor: pointer; }
+      body .section .third-section .ts-bg-container .tsn-bn-bg {
+        height: 1020px;
+        width: 1800px;
+        background-image: url(huluLogin-img/unset1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        margin-left: 100%;
+        overflow: hidden; }
+        body .section .third-section .ts-bg-container .tsn-bn-bg::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+        body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info h1 {
+          z-index: 999999;
+          color: white;
+          font-weight: 700;
+          font-family: "Ubuntu", sans-serif;
+          position: absolute;
+          margin: 355px 0 0 230px;
+          font-size: 60px;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-about {
+          z-index: 999999;
+          width: 700px;
+          color: white;
+          font-weight: 700;
+          position: absolute;
+          margin: 460px 0 0 230px;
+          font-size: 23px;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 100;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons {
+          z-index: 9999;
+          width: 350px;
+          height: 100px;
+          display: flex;
+          position: absolute;
+          margin: 560px 0 0 230px;
+          justify-content: space-between; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc img {
+              height: 89%;
+              width: 89%;
+              object-fit: contain; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn img {
+              height: 50%;
+              width: 50%;
+              object-fit: contain;
+              margin-top: 3.5px; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc img {
+              height: 85%;
+              width: 85%;
+              object-fit: contain;
+              margin-left: 3.5px; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn img {
+              height: 50%;
+              width: 50%;
+              object-fit: contain; }
+        body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info p {
+          z-index: 9999;
+          font-size: 12px;
+          margin: 660px 0 0 230px;
+          color: #a1a1a1;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          pointer-events: none;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info a {
+          z-index: 9999;
+          margin: 660px 0 0 675px;
+          text-decoration: underline;
+          color: #a1a1a1;
+          font-size: 12px;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          cursor: pointer; }
+      body .section .third-section .ts-bg-container .tsn-be-bg {
+        height: 1020px;
+        width: 1800px;
+        background-image: url(huluLogin-img/unset2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        margin-left: 200%;
+        overflow: hidden; }
+        body .section .third-section .ts-bg-container .tsn-be-bg::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+        body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info h1 {
+          z-index: 999999;
+          color: white;
+          font-weight: 700;
+          font-family: "Ubuntu", sans-serif;
+          position: absolute;
+          margin: 355px 0 0 230px;
+          font-size: 60px;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-about {
+          z-index: 999999;
+          width: 700px;
+          color: white;
+          font-weight: 700;
+          position: absolute;
+          margin: 460px 0 0 230px;
+          font-size: 23px;
+          font-family: "Ubuntu", sans-serif;
+          font-weight: 100;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons {
+          z-index: 9999;
+          width: 350px;
+          height: 100px;
+          display: flex;
+          position: absolute;
+          margin: 560px 0 0 230px;
+          justify-content: space-between; }
+          body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+        body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info p {
+          z-index: 9999;
+          font-size: 12px;
+          margin: 660px 0 0 230px;
+          color: #a1a1a1;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          pointer-events: none;
+          pointer-events: none; }
+        body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info a {
+          z-index: 9999;
+          margin: 660px 0 0 675px;
+          text-decoration: underline;
+          color: #a1a1a1;
+          font-size: 12px;
+          position: absolute;
+          font-family: "Ubuntu", sans-serif;
+          cursor: pointer; }
+    body .section .fourth-section {
+      width: 101%;
+      height: 110%;
+      margin-top: 9%;
+      background-color: #101013;
+      font-family: "Ubuntu", sans-serif; }
+      body .section .fourth-section .fours-header {
+        width: 100%;
+        height: 200px;
+        margin-top: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 55px;
+        margin-bottom: 30px; }
+        body .section .fourth-section .fours-header h1 {
+          color: white;
+          font-size: 65px;
+          font-weight: 500;
+          margin-top: 160px;
+          font-family: "Ubuntu", sans-serif;
+          pointer-events: none; }
+        body .section .fourth-section .fours-header p:nth-child(2) {
+          margin-top: 30px;
+          color: white;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 23px;
+          pointer-events: none; }
+        body .section .fourth-section .fours-header p:nth-child(3) {
+          margin-top: 5px;
+          color: white;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          pointer-events: none; }
+      body .section .fourth-section .fours-top {
+        width: 100%;
+        height: 260px;
+        margin-top: 90px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+        justify-content: space-between;
+        position: sticky; }
+        body .section .fourth-section .fours-top .forst-left {
+          display: flex;
+          height: 100%;
+          width: 40%;
+          padding-top: 210px;
+          padding-left: 160px; }
+          body .section .fourth-section .fours-top .forst-left .ftl-left {
+            width: 110px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-left .ftl-left img {
+              width: 42px;
+              height: 42px;
+              margin-left: 27px;
+              margin-top: 15px;
+              object-fit: contain;
+              position: absolute; }
+          body .section .fourth-section .fours-top .forst-left .ftl-center {
+            width: 75px;
+            height: 40px;
+            border-radius: 30px;
+            cursor: pointer; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center .changer {
+              width: 75px;
+              height: 39px;
+              background-color: #48494b;
+              border-radius: 30px;
+              margin-top: 3px;
+              transition: all ease-in-out 500ms; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBg {
+              background-color: #00ed82; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center .button {
+              width: 44px;
+              height: 44px;
+              background-color: white;
+              border-radius: 50%;
+              position: absolute; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBtn {
+              margin-left: 34px; }
+          body .section .fourth-section .fours-top .forst-left .ftl-right {
+            margin-left: 10px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-left .ftl-right img {
+              width: 11%;
+              height: 60px;
+              object-fit: contain;
+              position: absolute; }
+        body .section .fourth-section .fours-top .forst-right {
+          width: 60%;
+          height: 100%;
+          display: flex;
+          padding-right: 170px;
+          margin-left: 30px; }
+          body .section .fourth-section .fours-top .forst-right .ftr-left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 5px; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left .button {
+              background-color: #00ed82;
+              width: 155px;
+              height: 37px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 20px;
+              margin-block: 25px; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .button p {
+                font-size: 12px;
+                font-family: "Varela Round", sans-serif;
+                font-weight: 600;
+                pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(2) {
+              color: #616368;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 18px;
+              font-weight: 600;
+              pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(3) {
+              color: #fff;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 23px;
+              font-weight: 600;
+              margin-top: 10px;
+              pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r {
+              margin-top: 20px;
+              height: 60px;
+              width: 320px;
+              background-color: #fff;
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r:hover {
+                background-color: #dce2ecd5; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r p {
+                text-align: center;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                color: black;
+                pointer-events: none; }
+          body .section .fourth-section .fours-top .forst-right .ftr-right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 91px;
+            margin-left: 30px; }
+            body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(1) {
+              color: #616368;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 18px;
+              font-weight: 600;
+              pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(2) {
+              color: #fff;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 23px;
+              font-weight: 600;
+              margin-top: 10px;
+              pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l {
+              margin-top: 20px;
+              height: 60px;
+              width: 320px;
+              background-color: #fff;
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l:hover {
+                background-color: #dce2ecd5; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l p {
+                text-align: center;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                color: #101013;
+                pointer-events: none; }
+      body .section .fourth-section .fours-middle {
+        width: 70%;
+        height: 760px;
+        margin-left: 180px;
+        overflow: hidden;
+        pointer-events: none; }
+        body .section .fourth-section .fours-middle .forsm-first-list {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 50%; }
+          body .section .fourth-section .fours-middle .forsm-first-list div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            width: 100%;
+            color: white;
+            border-bottom: 1px solid #707070; }
+            body .section .fourth-section .fours-middle .forsm-first-list div p {
+              align-items: center;
+              width: 75%;
+              font-weight: 500;
+              font-size: 18px; }
+            body .section .fourth-section .fours-middle .forsm-first-list div div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border: none; }
+              body .section .fourth-section .fours-middle .forsm-first-list div div p {
+                display: flex;
+                justify-content: center;
+                align-items: center; }
+                body .section .fourth-section .fours-middle .forsm-first-list div div p .fa-minus {
+                  color: white; }
+                body .section .fourth-section .fours-middle .forsm-first-list div div p i {
+                  font-size: 30px;
+                  color: #00ed82; }
+          body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom {
+            margin-top: 10px;
+            padding-bottom: 90px;
+            height: 1px;
+            width: 100%;
+            display: flex;
+            border-bottom: none;
+            justify-content: start;
+            align-items: start; }
+            body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom p {
+              color: white;
+              font-size: 12px;
+              width: 40%; }
+        body .section .fourth-section .fours-middle .forsm-second-list {
+          color: white;
+          width: 100%;
+          height: 200px;
+          margin-top: 380px; }
+          body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(1) {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: "Ubuntu", sans-serif;
+            width: 100%; }
+          body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(2) {
+            font-size: 20px;
+            margin-top: 30px;
+            border-bottom: 2px solid #616368;
+            padding-bottom: 30px; }
+          body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle .starz {
+            border-bottom: none; }
+          body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            width: 100%;
+            color: white;
+            border-bottom: 1px solid #707070; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div p {
+              align-items: center;
+              width: 75%;
+              font-weight: 500;
+              font-size: 18px; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border: none; }
+              body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p {
+                display: flex;
+                justify-content: center;
+                align-items: center; }
+                body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p i {
+                  font-size: 30px;
+                  color: #00ed82; }
+        body .section .fourth-section .fours-middle .forsmSecondList {
+          margin-top: 195px; }
+      body .section .fourth-section .foursMiddleAc {
+        height: 1260px; }
+      body .section .fourth-section .forsm-show-btn {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        height: 50px;
+        margin-left: 15%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #707070;
+        border-bottom: 1px solid #707070;
+        transition: 300ms all ease-in-out;
+        cursor: pointer; }
+        body .section .fourth-section .forsm-show-btn p {
+          text-align: center;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          color: white;
+          margin-left: 45%; }
+        body .section .fourth-section .forsm-show-btn i {
+          font-size: 22px;
+          color: white;
+          margin-left: 10px; }
+    body .section .foruthSectionAc {
+      height: 150%; }
+    body .section .fivth-section {
+      width: 100%;
+      height: 640px;
+      background: #dadce0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Ubuntu", sans-serif; }
+      body .section .fivth-section .fvths-top {
+        margin-top: 50px;
+        width: 80%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        body .section .fivth-section .fvths-top p {
+          font-weight: 500;
+          font-size: 18px;
+          color: #39393a;
+          padding-left: 3px;
+          pointer-events: none; }
+        body .section .fivth-section .fvths-top .fvthst-r {
+          width: 25%;
+          height: 100%;
+          padding-right: 135px;
+          color: #39393a;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          pointer-events: none; }
+      body .section .fivth-section .fvths-middle {
+        display: flex;
+        width: 70%;
+        height: 200px;
+        justify-content: space-between;
+        margin-right: 130px;
+        padding-block: 20px; }
+        body .section .fivth-section .fvths-middle .fvthsm-1,
+        body .section .fivth-section .fvths-middle .fvthsm-2,
+        body .section .fivth-section .fvths-middle .fvthsm-3,
+        body .section .fivth-section .fvths-middle .fvthsm-4,
+        body .section .fivth-section .fvths-middle .fvthsm-5,
+        body .section .fivth-section .fvths-middle .fvthsm-6 {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: start;
+          gap: 20px;
+          text-decoration: none; }
+          body .section .fivth-section .fvths-middle .fvthsm-1 a,
+          body .section .fivth-section .fvths-middle .fvthsm-2 a,
+          body .section .fivth-section .fvths-middle .fvthsm-3 a,
+          body .section .fivth-section .fvths-middle .fvthsm-4 a,
+          body .section .fivth-section .fvths-middle .fvthsm-5 a,
+          body .section .fivth-section .fvths-middle .fvthsm-6 a {
+            color: #616368;
+            font-size: 18px;
+            font-weight: 500; }
+      body .section .fivth-section .fvths-bottom {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 200px;
+        border-top: #acadaf 2px solid;
+        padding-top: 40px;
+        margin-top: 140px; }
+        body .section .fivth-section .fvths-bottom .fvthsb-ico {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          body .section .fivth-section .fvths-bottom .fvthsb-ico img {
+            width: 25px;
+            height: 25px; }
+        body .section .fivth-section .fvths-bottom .fvthsb-info {
+          margin-top: 30px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 90%;
+          height: 10px;
+          gap: 20px; }
+          body .section .fivth-section .fvths-bottom .fvthsb-info a {
+            margin-left: 20px;
+            color: #616368;
+            font-family: "Varela Round", sans-serif; }
+          body .section .fivth-section .fvths-bottom .fvthsb-info div {
+            margin-left: 20px; }
+            body .section .fivth-section .fvths-bottom .fvthsb-info div a {
+              margin-left: 0px; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; }
+
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0; }
+    body .section {
+      width: 100%;
+      height: 60%; }
+      body .section .first-section {
+        height: 200%;
+        width: 100%;
+        background-image: linear-gradient(0deg, transparent 60%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.4) 100%), url("./huluLogin-img/main-background-responsive.png");
+        background-size: cover;
+        background-position-x: 65%;
+        background-position-y: 99%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        body .section .first-section::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0px 50px 50px 0px black; }
+        body .section .first-section .fs-top {
+          width: 100%;
+          height: 10%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 9999999;
+          margin-top: 40px; }
+          body .section .first-section .fs-top .fst-img {
+            width: 60px;
+            height: 90%;
+            margin-left: 20px;
+            margin-top: 0; }
+            body .section .first-section .fs-top .fst-img img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .first-section .fs-top .fst-btn {
+            display: none; }
+          body .section .first-section .fs-top .fst-hamburger {
+            background-color: #39393a;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 10px; }
+            body .section .first-section .fs-top .fst-hamburger .hamburger {
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              body .section .first-section .fs-top .fst-hamburger .hamburger .fa-bars {
+                color: white;
+                margin-top: 1px; }
+        body .section .first-section .responsivePopUp {
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 999999999;
+          width: 270px;
+          height: 150px;
+          margin-bottom: 330px;
+          border-radius: 10px;
+          background-color: #39393a;
+          font-family: "Ubuntu", sans-serif; }
+          body .section .first-section .responsivePopUp .rp-1 {
+            width: 95%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .first-section .responsivePopUp .rp-1 p {
+              font-weight: 600;
+              color: #1c1c1d; }
+          body .section .first-section .responsivePopUp .rp-2 {
+            width: 95%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .first-section .responsivePopUp .rp-2 p {
+              font-weight: 600;
+              color: #1c1c1d; }
+          body .section .first-section .responsivePopUp .rp-3 {
+            width: 98%;
+            margin-top: 3px;
+            height: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: #1c1c1d; }
+            body .section .first-section .responsivePopUp .rp-3 p {
+              font-weight: 600;
+              color: white; }
+        body .section .first-section .responsivePopUp.active {
+          display: flex; }
+        body .section .first-section .fs-middle {
+          z-index: 9999999;
+          width: 100%;
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 50px; }
+          body .section .first-section .fs-middle p {
+            padding: 8px;
+            text-align: center;
+            color: #00ed82;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: "Varela Round", sans-serif;
+            pointer-events: none; }
+          body .section .first-section .fs-middle .fsm-image {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px; }
+            body .section .first-section .fs-middle .fsm-image img {
+              height: 60%;
+              width: 100%;
+              object-fit: contain; }
+            body .section .first-section .fs-middle .fsm-image p {
+              text-align: center;
+              margin-top: 10px;
+              height: 30px;
+              width: 250px;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 18px;
+              color: white;
+              font-weight: 500;
+              pointer-events: none; }
+          body .section .first-section .fs-middle .getB-btn {
+            margin-top: 30px;
+            height: 50px;
+            width: 230px;
+            background-color: #00ed82;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer; }
+            body .section .first-section .fs-middle .getB-btn:hover {
+              opacity: 60%; }
+            body .section .first-section .fs-middle .getB-btn a {
+              text-align: center;
+              font-size: 16px;
+              font-family: "Varela Round", sans-serif;
+              color: black;
+              font-weight: 600; }
+          body .section .first-section .fs-middle .fs-terms {
+            margin-top: 20px;
+            font-size: 13px;
+            color: white;
+            text-decoration: underline;
+            font-family: "Ubuntu", sans-serif;
+            cursor: pointer; }
+          body .section .first-section .fs-middle .fs-SingUp {
+            margin-top: 40px;
+            font-size: 15px;
+            color: white;
+            text-decoration: underline;
+            font-family: "Ubuntu", sans-serif;
+            cursor: pointer; }
+        body .section .first-section .fs-bottom {
+          z-index: 9999999;
+          width: 100%;
+          height: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.514); }
+          body .section .first-section .fs-bottom .fsb-left {
+            height: 30%;
+            width: 100%;
+            margin-left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            top: 0; }
+            body .section .first-section .fs-bottom .fsb-left img {
+              width: 100%;
+              height: 50%;
+              object-fit: contain; }
+          body .section .first-section .fs-bottom .fsb-center {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin-left: 0;
+            pointer-events: none;
+            margin-bottom: 20px;
+            margin-right: 20px; }
+            body .section .first-section .fs-bottom .fsb-center p {
+              color: #00ed82;
+              font-size: 15px;
+              font-family: "Varela Round", sans-serif;
+              font-weight: 500; }
+            body .section .first-section .fs-bottom .fsb-center h2 {
+              color: white;
+              font-family: "Varela Round", sans-serif;
+              font-weight: 400;
+              font-size: 13px;
+              width: 75%;
+              text-align: center; }
+          body .section .first-section .fs-bottom .fsb-right {
+            width: 100%;
+            height: 10px;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 70px;
+            margin-right: 60px; }
+            body .section .first-section .fs-bottom .fsb-right .fsbr-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 200px;
+              height: 50px;
+              background-color: transparent;
+              border: 3px solid white;
+              border-radius: 5px;
+              cursor: pointer; }
+              body .section .first-section .fs-bottom .fsb-right .fsbr-btn:hover {
+                opacity: 60%; }
+              body .section .first-section .fs-bottom .fsb-right .fsbr-btn .fsbrb-a {
+                width: 100%;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+                font-weight: 600;
+                font-size: 15px;
+                font-family: "Ubuntu", sans-serif;
+                transform: translateX(-30px); }
+            body .section .first-section .fs-bottom .fsb-right a {
+              color: #a8afbd;
+              font-size: 13px;
+              text-decoration: underline;
+              font-family: "Varela Round", sans-serif; }
+              body .section .first-section .fs-bottom .fsb-right a:hover {
+                text-decoration: none; }
+        body .section .first-section .loginPopUp {
+          overflow-x: hidden; }
+          body .section .first-section .loginPopUp .popUp {
+            width: 95%;
+            height: 60%;
+            border-radius: 5px; }
+            body .section .first-section .loginPopUp .popUp .lp-top {
+              font-size: 10px; }
+              body .section .first-section .loginPopUp .popUp .lp-top .lp-info {
+                line-height: 17px;
+                width: 230px; }
+                body .section .first-section .loginPopUp .popUp .lp-top .lp-info p {
+                  font-size: 13px; }
+            body .section .first-section .loginPopUp .popUp .lp-middle {
+              height: 215px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs {
+                margin-bottom: 25px;
+                padding-left: 37px;
+                margin-top: 10px; }
+                body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpe-i {
+                  width: 200px; }
+                body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpp-i {
+                  width: 200px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-forgot {
+                font-size: 15px;
+                margin-left: 40px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn {
+                width: 120px;
+                position: absolute;
+                margin: 26px 0 0 20px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn {
+                width: 120px;
+                margin: 26px 0 0 155px; }
+            body .section .first-section .loginPopUp .popUp .lp-bottom {
+              margin-top: 90px; }
+              body .section .first-section .loginPopUp .popUp .lp-bottom p {
+                margin-top: 40px;
+                color: white;
+                padding: 0 0 0 20px; }
+              body .section .first-section .loginPopUp .popUp .lp-bottom a {
+                margin-top: 40px;
+                padding: 0 20px 100px 0; }
+        body .section .first-section .registerPopUp {
+          width: 100%;
+          overflow-x: hidden;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px; }
+          body .section .first-section .registerPopUp .resPop {
+            width: 95%;
+            margin-top: 280px;
+            border-radius: 5px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpe-i {
+              width: 200px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpp-i {
+              width: 200px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn {
+              width: 223px; }
+      body .section .second-section {
+        height: 450%;
+        width: 100%;
+        background-color: #101013;
+        display: flex;
+        align-items: center;
+        flex-direction: column; }
+        body .section .second-section .ss-top {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 110px;
+          margin-bottom: 70px; }
+          body .section .second-section .ss-top p:first-child {
+            color: #00ed82;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 10px; }
+          body .section .second-section .ss-top h1 {
+            color: white;
+            font-size: 30px;
+            font-family: "Ubuntu", sans-serif;
+            margin-top: 10px;
+            margin-bottom: 40px; }
+          body .section .second-section .ss-top p:last-child {
+            width: 90%;
+            height: 40px;
+            text-align: center;
+            color: white;
+            font-family: "Varela Round", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-right: 40px; }
+        body .section .second-section .ss-middle {
+          width: 100%;
+          height: 600px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          margin-right: 65px; }
+          body .section .second-section .ss-middle .chapter-1,
+          body .section .second-section .ss-middle .chapter-2,
+          body .section .second-section .ss-middle .chapter-3,
+          body .section .second-section .ss-middle .chapter-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            height: 200px;
+            width: 120px; }
+            body .section .second-section .ss-middle .chapter-1::after,
+            body .section .second-section .ss-middle .chapter-2::after,
+            body .section .second-section .ss-middle .chapter-3::after,
+            body .section .second-section .ss-middle .chapter-4::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 900px 0px 100px rgba(0, 0, 0, 0.4); }
+            body .section .second-section .ss-middle .chapter-1 img,
+            body .section .second-section .ss-middle .chapter-2 img,
+            body .section .second-section .ss-middle .chapter-3 img,
+            body .section .second-section .ss-middle .chapter-4 img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; }
+            body .section .second-section .ss-middle .chapter-1 .c1-h,
+            body .section .second-section .ss-middle .chapter-1 .c2-h,
+            body .section .second-section .ss-middle .chapter-1 .c3-h,
+            body .section .second-section .ss-middle .chapter-1 .c4-h,
+            body .section .second-section .ss-middle .chapter-2 .c1-h,
+            body .section .second-section .ss-middle .chapter-2 .c2-h,
+            body .section .second-section .ss-middle .chapter-2 .c3-h,
+            body .section .second-section .ss-middle .chapter-2 .c4-h,
+            body .section .second-section .ss-middle .chapter-3 .c1-h,
+            body .section .second-section .ss-middle .chapter-3 .c2-h,
+            body .section .second-section .ss-middle .chapter-3 .c3-h,
+            body .section .second-section .ss-middle .chapter-3 .c4-h,
+            body .section .second-section .ss-middle .chapter-4 .c1-h,
+            body .section .second-section .ss-middle .chapter-4 .c2-h,
+            body .section .second-section .ss-middle .chapter-4 .c3-h,
+            body .section .second-section .ss-middle .chapter-4 .c4-h {
+              width: 50px;
+              height: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              z-index: 9999999;
+              width: 300px;
+              height: 50px;
+              position: absolute;
+              color: white;
+              margin-top: 15px;
+              font-weight: 300;
+              margin-left: 20px; }
+              body .section .second-section .ss-middle .chapter-1 .c1-h p,
+              body .section .second-section .ss-middle .chapter-1 .c2-h p,
+              body .section .second-section .ss-middle .chapter-1 .c3-h p,
+              body .section .second-section .ss-middle .chapter-1 .c4-h p,
+              body .section .second-section .ss-middle .chapter-2 .c1-h p,
+              body .section .second-section .ss-middle .chapter-2 .c2-h p,
+              body .section .second-section .ss-middle .chapter-2 .c3-h p,
+              body .section .second-section .ss-middle .chapter-2 .c4-h p,
+              body .section .second-section .ss-middle .chapter-3 .c1-h p,
+              body .section .second-section .ss-middle .chapter-3 .c2-h p,
+              body .section .second-section .ss-middle .chapter-3 .c3-h p,
+              body .section .second-section .ss-middle .chapter-3 .c4-h p,
+              body .section .second-section .ss-middle .chapter-4 .c1-h p,
+              body .section .second-section .ss-middle .chapter-4 .c2-h p,
+              body .section .second-section .ss-middle .chapter-4 .c3-h p,
+              body .section .second-section .ss-middle .chapter-4 .c4-h p {
+                font-size: 10px;
+                width: 50px;
+                font-family: "Varela Round", sans-serif;
+                margin-top: 15px;
+                position: absolute;
+                margin-right: 50px;
+                margin-bottom: 80px; }
+              body .section .second-section .ss-middle .chapter-1 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c4-h h3 {
+                font-family: "Ubuntu", sans-serif;
+                font-size: 10px;
+                margin-top: 45px;
+                position: absolute;
+                font-weight: 300;
+                margin-right: 30px;
+                margin-bottom: 50px; }
+        body .section .second-section .ss-bottom {
+          width: 100%;
+          height: 1100px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          font-family: "Ubuntu", sans-serif; }
+          body .section .second-section .ss-bottom p:nth-child(1) {
+            padding-top: 80px;
+            margin-top: 10px;
+            color: #00ed82;
+            font-size: 14px;
+            font-weight: 500;
+            pointer-events: none;
+            text-align: center; }
+          body .section .second-section .ss-bottom h1 {
+            margin-top: 35px;
+            color: white;
+            font-size: 33px;
+            pointer-events: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex; }
+          body .section .second-section .ss-bottom p:nth-child(3) {
+            margin-top: 35px;
+            width: 85%;
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            pointer-events: none; }
+          body .section .second-section .ss-bottom p:nth-child(4) {
+            margin-top: 40px;
+            width: 85%;
+            font-size: 12px;
+            color: #989da7;
+            text-align: center;
+            pointer-events: none; }
+          body .section .second-section .ss-bottom a {
+            margin-top: 40px;
+            color: #d0d5df;
+            text-decoration: underline;
+            font-family: "Varela Round", sans-serif;
+            font-size: 15px;
+            font-weight: 700; }
+          body .section .second-section .ss-bottom .ssb-down {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .second-section .ss-bottom .ssb-down .fa-chevron-down {
+              -webkit-animation: move-up-and-down 1s infinite alternate;
+              -moz-animation: move-up-and-down 1s infinite alternate;
+              -o-animation: move-up-and-down 1s infinite alternate;
+              animation: move-up-and-down 1s infinite alternate; }
+  @keyframes move-up-and-down {
+    0% {
+      transform: translateY(0); }
+    100% {
+      transform: translateY(-15px); } }
+      body .section .third-section {
+        width: 100%;
+        height: 350%;
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap; }
+        body .section .third-section .ts-bg-container {
+          overflow-y: hidden; }
+          body .section .third-section .ts-bg-container .ts-navbar {
+            position: absolute;
+            z-index: 99999;
+            display: flex;
+            color: white;
+            width: 100%;
+            height: 100px;
+            margin: 50px 0 0 30px;
+            justify-content: space-between;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 700;
+            cursor: pointer; }
+            body .section .third-section .ts-bg-container .ts-navbar .tsn-white-underline {
+              width: 101px;
+              height: 6px;
+              background-color: white;
+              position: absolute;
+              margin-top: 40px; }
+          body .section .third-section .ts-bg-container .tsn-ls-bg {
+            height: 1020px;
+            width: 100%;
+            background-image: url(huluLogin-img/unset1-res.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-about {
+              z-index: 999999;
+              width: 100px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 580px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs,
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn,
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs img,
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn img,
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 690px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info a {
+              z-index: 9999;
+              margin: 690px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg {
+            display: none;
+            height: 1020px;
+            width: 100%;
+            background-image: url(huluLogin-img/unset1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            margin-left: 100%;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-about {
+              z-index: 999999;
+              width: 700px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 560px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc img {
+                  height: 89%;
+                  width: 89%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain;
+                  margin-top: 3.5px; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc img {
+                  height: 85%;
+                  width: 85%;
+                  object-fit: contain;
+                  margin-left: 3.5px; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 660px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info a {
+              z-index: 9999;
+              margin: 660px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+          body .section .third-section .ts-bg-container .tsn-be-bg {
+            height: 1020px;
+            width: 1800px;
+            display: none;
+            background-image: url(huluLogin-img/unset2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            margin-left: 200%;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-be-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-about {
+              z-index: 999999;
+              width: 700px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 560px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 660px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info a {
+              z-index: 9999;
+              margin: 660px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+      body .section .fourth-section {
+        width: 101%;
+        height: 110%;
+        margin-top: 9%;
+        background-color: #101013;
+        font-family: "Ubuntu", sans-serif;
+        display: none; }
+        body .section .fourth-section .fours-header {
+          width: 100%;
+          height: 200px;
+          margin-top: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 55px;
+          margin-bottom: 30px; }
+          body .section .fourth-section .fours-header h1 {
+            color: white;
+            font-size: 65px;
+            font-weight: 500;
+            margin-top: 160px;
+            font-family: "Ubuntu", sans-serif;
+            pointer-events: none; }
+          body .section .fourth-section .fours-header p:nth-child(2) {
+            margin-top: 30px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 23px;
+            pointer-events: none; }
+          body .section .fourth-section .fours-header p:nth-child(3) {
+            margin-top: 5px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            pointer-events: none; }
+        body .section .fourth-section .fours-top {
+          width: 100%;
+          height: 260px;
+          margin-top: 90px;
+          display: flex;
+          align-items: center;
+          border-top: 1px solid #707070;
+          border-bottom: 1px solid #707070;
+          justify-content: space-between;
+          position: sticky; }
+          body .section .fourth-section .fours-top .forst-left {
+            display: flex;
+            height: 100%;
+            width: 40%;
+            padding-top: 210px;
+            padding-left: 160px; }
+            body .section .fourth-section .fours-top .forst-left .ftl-left {
+              width: 110px;
+              color: white;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 16px;
+              font-weight: 700;
+              pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-left .ftl-left img {
+                width: 42px;
+                height: 42px;
+                margin-left: 27px;
+                margin-top: 15px;
+                object-fit: contain;
+                position: absolute; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center {
+              width: 75px;
+              height: 40px;
+              border-radius: 30px;
+              cursor: pointer; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .changer {
+                width: 75px;
+                height: 39px;
+                background-color: #48494b;
+                border-radius: 30px;
+                margin-top: 3px;
+                transition: all ease-in-out 500ms; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBg {
+                background-color: #00ed82; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .button {
+                width: 44px;
+                height: 44px;
+                background-color: white;
+                border-radius: 50%;
+                position: absolute; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBtn {
+                margin-left: 34px; }
+            body .section .fourth-section .fours-top .forst-left .ftl-right {
+              margin-left: 10px;
+              color: white;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 16px;
+              font-weight: 700;
+              pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-left .ftl-right img {
+                width: 11%;
+                height: 60px;
+                object-fit: contain;
+                position: absolute; }
+          body .section .fourth-section .fours-top .forst-right {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            padding-right: 170px;
+            margin-left: 30px; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left {
+              width: 50%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              padding-top: 5px; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .button {
+                background-color: #00ed82;
+                width: 155px;
+                height: 37px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                margin-block: 25px; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .button p {
+                  font-size: 12px;
+                  font-family: "Varela Round", sans-serif;
+                  font-weight: 600;
+                  pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(2) {
+                color: #616368;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(3) {
+                color: #fff;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 23px;
+                font-weight: 600;
+                margin-top: 10px;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r {
+                margin-top: 20px;
+                height: 60px;
+                width: 320px;
+                background-color: #fff;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r:hover {
+                  background-color: #dce2ecd5; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r p {
+                  text-align: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-size: 20px;
+                  font-weight: 500;
+                  color: black;
+                  pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-right {
+              width: 50%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              padding-top: 91px;
+              margin-left: 30px; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(1) {
+                color: #616368;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(2) {
+                color: #fff;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 23px;
+                font-weight: 600;
+                margin-top: 10px;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l {
+                margin-top: 20px;
+                height: 60px;
+                width: 320px;
+                background-color: #fff;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer; }
+                body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l:hover {
+                  background-color: #dce2ecd5; }
+                body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l p {
+                  text-align: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-size: 20px;
+                  font-weight: 500;
+                  color: #101013;
+                  pointer-events: none; }
+        body .section .fourth-section .fours-middle {
+          width: 70%;
+          height: 760px;
+          margin-left: 180px;
+          overflow: hidden;
+          pointer-events: none; }
+          body .section .fourth-section .fours-middle .forsm-first-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 50%; }
+            body .section .fourth-section .fours-middle .forsm-first-list div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 70px;
+              width: 100%;
+              color: white;
+              border-bottom: 1px solid #707070; }
+              body .section .fourth-section .fours-middle .forsm-first-list div p {
+                align-items: center;
+                width: 75%;
+                font-weight: 500;
+                font-size: 18px; }
+              body .section .fourth-section .fours-middle .forsm-first-list div div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: none; }
+                body .section .fourth-section .fours-middle .forsm-first-list div div p {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                  body .section .fourth-section .fours-middle .forsm-first-list div div p .fa-minus {
+                    color: white; }
+                  body .section .fourth-section .fours-middle .forsm-first-list div div p i {
+                    font-size: 30px;
+                    color: #00ed82; }
+            body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom {
+              margin-top: 10px;
+              padding-bottom: 90px;
+              height: 1px;
+              width: 100%;
+              display: flex;
+              border-bottom: none;
+              justify-content: start;
+              align-items: start; }
+              body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom p {
+                color: white;
+                font-size: 12px;
+                width: 40%; }
+          body .section .fourth-section .fours-middle .forsm-second-list {
+            color: white;
+            width: 100%;
+            height: 200px;
+            margin-top: 380px; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(1) {
+              font-size: 40px;
+              font-weight: 600;
+              font-family: "Ubuntu", sans-serif;
+              width: 100%; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(2) {
+              font-size: 20px;
+              margin-top: 30px;
+              border-bottom: 2px solid #616368;
+              padding-bottom: 30px; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle .starz {
+              border-bottom: none; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 70px;
+              width: 100%;
+              color: white;
+              border-bottom: 1px solid #707070; }
+              body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div p {
+                align-items: center;
+                width: 75%;
+                font-weight: 500;
+                font-size: 18px; }
+              body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: none; }
+                body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                  body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p i {
+                    font-size: 30px;
+                    color: #00ed82; }
+          body .section .fourth-section .fours-middle .forsmSecondList {
+            margin-top: 195px; }
+        body .section .fourth-section .foursMiddleAc {
+          height: 1260px; }
+        body .section .fourth-section .forsm-show-btn {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          height: 50px;
+          margin-left: 15%;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          border-top: 1px solid #707070;
+          border-bottom: 1px solid #707070;
+          transition: 300ms all ease-in-out;
+          cursor: pointer; }
+          body .section .fourth-section .forsm-show-btn p {
+            text-align: center;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: white;
+            margin-left: 45%; }
+          body .section .fourth-section .forsm-show-btn i {
+            font-size: 22px;
+            color: white;
+            margin-left: 10px; }
+      body .section .foruthSectionAc {
+        height: 150%; }
+      body .section .fivth-section {
+        width: 100%;
+        height: 840px;
+        background: #dadce0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Ubuntu", sans-serif; }
+        body .section .fivth-section .fvths-top {
+          margin-top: 50px;
+          margin-right: 40px;
+          width: 80%;
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          align-items: start;
+          justify-content: space-between; }
+          body .section .fivth-section .fvths-top p {
+            font-weight: 500;
+            font-size: 14px;
+            color: #39393a;
+            padding-bottom: 20px;
+            pointer-events: none;
+            border-bottom: 1px solid #acadaf;
+            width: 100%; }
+          body .section .fivth-section .fvths-top .fvthst-r {
+            width: 100%;
+            gap: 30px;
+            height: 100%;
+            padding-right: 135px;
+            color: #39393a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            pointer-events: none; }
+            body .section .fivth-section .fvths-top .fvthst-r p:first-child {
+              border-bottom: 1px solid #acadaf;
+              width: 100%;
+              padding-bottom: 20px; }
+            body .section .fivth-section .fvths-top .fvthst-r p:last-child {
+              border-bottom: 1px solid #acadaf;
+              width: 100%;
+              padding-bottom: 20px; }
+        body .section .fivth-section .fvths-middle {
+          display: none;
+          width: 70%;
+          height: 200px;
+          justify-content: space-between;
+          margin-right: 130px;
+          padding-block: 20px; }
+          body .section .fivth-section .fvths-middle .fvthsm-1,
+          body .section .fivth-section .fvths-middle .fvthsm-2,
+          body .section .fivth-section .fvths-middle .fvthsm-3,
+          body .section .fivth-section .fvths-middle .fvthsm-4,
+          body .section .fivth-section .fvths-middle .fvthsm-5,
+          body .section .fivth-section .fvths-middle .fvthsm-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 20px;
+            text-decoration: none; }
+            body .section .fivth-section .fvths-middle .fvthsm-1 a,
+            body .section .fivth-section .fvths-middle .fvthsm-2 a,
+            body .section .fivth-section .fvths-middle .fvthsm-3 a,
+            body .section .fivth-section .fvths-middle .fvthsm-4 a,
+            body .section .fivth-section .fvths-middle .fvthsm-5 a,
+            body .section .fivth-section .fvths-middle .fvthsm-6 a {
+              color: #616368;
+              font-size: 18px;
+              font-weight: 500; }
+        body .section .fivth-section .fvths-bottom {
+          display: flex;
+          flex-direction: column;
+          border-top: transparent 1px solid;
+          width: 80%;
+          height: 200px;
+          padding-top: 40px;
+          margin-top: 140px; }
+          body .section .fivth-section .fvths-bottom .fvthsb-ico {
+            width: 200px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            body .section .fivth-section .fvths-bottom .fvthsb-ico img {
+              width: 25px;
+              height: 25px; }
+          body .section .fivth-section .fvths-bottom .fvthsb-info {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            height: 10px;
+            gap: 20px; }
+            body .section .fivth-section .fvths-bottom .fvthsb-info a {
+              margin-left: 14px;
+              color: #616368;
+              font-family: "Varela Round", sans-serif; }
+            body .section .fivth-section .fvths-bottom .fvthsb-info div a {
+              margin-left: 0px; } }
+@media (min-width: 321px) and (max-width: 375px) {
+  body .section .first-section .loginPopUp {
+    overflow-x: hidden; }
+    body .section .first-section .loginPopUp .popUp {
+      width: 95%;
+      height: 60%;
+      border-radius: 5px; }
+      body .section .first-section .loginPopUp .popUp .lp-top {
+        font-size: 10px; }
+        body .section .first-section .loginPopUp .popUp .lp-top .lp-info {
+          line-height: 17px;
+          width: 230px; }
+          body .section .first-section .loginPopUp .popUp .lp-top .lp-info p {
+            font-size: 13px; }
+      body .section .first-section .loginPopUp .popUp .lp-middle {
+        height: 215px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs {
+          margin-bottom: 25px;
+          padding-left: 37px;
+          margin-top: 10px; }
+          body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpe-i {
+            width: 240px; }
+          body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpp-i {
+            width: 240px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-forgot {
+          font-size: 15px;
+          margin-left: 40px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn {
+          width: 120px;
+          position: absolute;
+          margin: 26px 0 0 30px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn {
+          width: 120px;
+          margin: 26px 0 0 185px; }
+      body .section .first-section .loginPopUp .popUp .lp-bottom {
+        margin-top: 90px; }
+        body .section .first-section .loginPopUp .popUp .lp-bottom p {
+          margin-top: 40px;
+          color: white;
+          padding: 0 0 0 20px; }
+        body .section .first-section .loginPopUp .popUp .lp-bottom a {
+          margin-top: 40px;
+          padding: 0 20px 100px 0; }
+  body .section .first-section .registerPopUp {
+    width: 100%;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; }
+    body .section .first-section .registerPopUp .resPop {
+      width: 95%;
+      margin-top: 280px;
+      border-radius: 5px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpe-i {
+        width: 240px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpp-i {
+        width: 240px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn {
+        width: 265px; }
+  body .section .second-section .ss-middle {
+    margin-right: 10px; } }
+@media (min-width: 376px) and (max-width: 425px) {
+  body .section .first-section .responsivePopUp {
+    margin-left: 100px; }
+  body .section .first-section .loginPopUp {
+    overflow-x: hidden; }
+    body .section .first-section .loginPopUp .popUp {
+      width: 95%;
+      height: 60%;
+      border-radius: 5px; }
+      body .section .first-section .loginPopUp .popUp .lp-top {
+        font-size: 10px; }
+        body .section .first-section .loginPopUp .popUp .lp-top .lp-info {
+          line-height: 17px;
+          width: 230px; }
+          body .section .first-section .loginPopUp .popUp .lp-top .lp-info p {
+            font-size: 13px; }
+      body .section .first-section .loginPopUp .popUp .lp-middle {
+        height: 215px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs {
+          margin-bottom: 25px;
+          padding-left: 37px;
+          margin-top: 10px; }
+          body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpe-i {
+            width: 290px; }
+          body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpp-i {
+            width: 290px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-forgot {
+          font-size: 15px;
+          margin-left: 40px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn {
+          width: 150px;
+          position: absolute;
+          margin: 26px 0 0 30px; }
+        body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn {
+          width: 150px;
+          margin: 26px 0 0 195px; }
+      body .section .first-section .loginPopUp .popUp .lp-bottom {
+        margin-top: 90px; }
+        body .section .first-section .loginPopUp .popUp .lp-bottom p {
+          margin-top: 40px;
+          color: white;
+          padding: 0 0 0 20px; }
+        body .section .first-section .loginPopUp .popUp .lp-bottom a {
+          margin-top: 40px;
+          padding: 0 20px 100px 0; }
+  body .section .first-section .registerPopUp {
+    width: 100%;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; }
+    body .section .first-section .registerPopUp .resPop {
+      width: 95%;
+      margin-top: 280px;
+      border-radius: 5px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpe-i {
+        width: 290px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpp-i {
+        width: 290px; }
+      body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn {
+        width: 315px; }
+  body .section .second-section .ss-bottom {
+    height: 650px; }
+  body .section .second-section .ss-middle {
+    justify-content: center;
+    margin-left: 70px; } }
+@media (min-width: 768px) and (max-width: 1024px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; }
+
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0; }
+    body .section {
+      width: 100%;
+      height: 60%; }
+      body .section .first-section {
+        height: 200%;
+        width: 100%;
+        background-size: cover;
+        background-position-x: 65%;
+        background-position-y: 99%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        body .section .first-section::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 50%;
+          height: 50%;
+          box-shadow: inset 0px 50px 50px 0px black; }
+        body .section .first-section .fs-top {
+          width: 100%;
+          height: 10%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 9999999;
+          margin-top: 40px; }
+          body .section .first-section .fs-top .fst-img {
+            width: 60px;
+            height: 90%;
+            margin-left: 20px;
+            margin-top: 0; }
+            body .section .first-section .fs-top .fst-img img {
+              height: 100%;
+              width: 100%;
+              object-fit: contain; }
+          body .section .first-section .fs-top .fst-btn {
+            display: none; }
+          body .section .first-section .fs-top .fst-hamburger {
+            background-color: #39393a;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 10px; }
+            body .section .first-section .fs-top .fst-hamburger .hamburger {
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              body .section .first-section .fs-top .fst-hamburger .hamburger .fa-bars {
+                color: white;
+                margin-top: 1px; }
+        body .section .first-section .responsivePopUp {
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 999999999;
+          width: 270px;
+          height: 150px;
+          margin-bottom: 350px;
+          margin-left: 400px;
+          border-radius: 10px;
+          background-color: #39393a;
+          font-family: "Ubuntu", sans-serif; }
+          body .section .first-section .responsivePopUp .rp-1 {
+            width: 95%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .first-section .responsivePopUp .rp-1 p {
+              font-weight: 600;
+              color: #1c1c1d; }
+          body .section .first-section .responsivePopUp .rp-2 {
+            width: 95%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .first-section .responsivePopUp .rp-2 p {
+              font-weight: 600;
+              color: #1c1c1d; }
+          body .section .first-section .responsivePopUp .rp-3 {
+            width: 98%;
+            margin-top: 3px;
+            height: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: #1c1c1d; }
+            body .section .first-section .responsivePopUp .rp-3 p {
+              font-weight: 600;
+              color: white; }
+        body .section .first-section .responsivePopUp.active {
+          display: flex;
+          width: 40%;
+          margin-bottom: 49%; }
+        body .section .first-section .fs-middle {
+          z-index: 9999999;
+          width: 100%;
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 50px; }
+          body .section .first-section .fs-middle p {
+            padding: 8px;
+            text-align: center;
+            color: #00ed82;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: "Varela Round", sans-serif;
+            pointer-events: none; }
+          body .section .first-section .fs-middle .fsm-image {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px; }
+            body .section .first-section .fs-middle .fsm-image img {
+              height: 60%;
+              width: 100%;
+              object-fit: contain; }
+            body .section .first-section .fs-middle .fsm-image p {
+              text-align: center;
+              margin-top: 10px;
+              height: 30px;
+              width: 250px;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 18px;
+              color: white;
+              font-weight: 500;
+              pointer-events: none; }
+          body .section .first-section .fs-middle .getB-btn {
+            margin-top: 30px;
+            height: 50px;
+            width: 230px;
+            background-color: #00ed82;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer; }
+            body .section .first-section .fs-middle .getB-btn:hover {
+              opacity: 60%; }
+            body .section .first-section .fs-middle .getB-btn a {
+              text-align: center;
+              font-size: 16px;
+              font-family: "Varela Round", sans-serif;
+              color: black;
+              font-weight: 600; }
+          body .section .first-section .fs-middle .fs-terms {
+            margin-top: 20px;
+            font-size: 13px;
+            color: white;
+            text-decoration: underline;
+            font-family: "Ubuntu", sans-serif;
+            cursor: pointer; }
+          body .section .first-section .fs-middle .fs-SingUp {
+            margin-top: 40px;
+            font-size: 15px;
+            color: white;
+            text-decoration: underline;
+            font-family: "Ubuntu", sans-serif;
+            cursor: pointer; }
+        body .section .first-section .fs-bottom {
+          z-index: 9999999;
+          width: 100%;
+          height: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.514); }
+          body .section .first-section .fs-bottom .fsb-left {
+            height: 30%;
+            width: 100%;
+            margin-left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            top: 0; }
+            body .section .first-section .fs-bottom .fsb-left img {
+              width: 100%;
+              height: 50%;
+              object-fit: contain; }
+          body .section .first-section .fs-bottom .fsb-center {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin-left: 0;
+            pointer-events: none;
+            margin-bottom: 20px;
+            margin-right: 20px; }
+            body .section .first-section .fs-bottom .fsb-center p {
+              color: #00ed82;
+              font-size: 15px;
+              font-family: "Varela Round", sans-serif;
+              font-weight: 500; }
+            body .section .first-section .fs-bottom .fsb-center h2 {
+              color: white;
+              font-family: "Varela Round", sans-serif;
+              font-weight: 400;
+              font-size: 13px;
+              width: 75%;
+              text-align: center; }
+          body .section .first-section .fs-bottom .fsb-right {
+            width: 100%;
+            height: 10px;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 70px;
+            margin-right: 60px; }
+            body .section .first-section .fs-bottom .fsb-right .fsbr-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 200px;
+              height: 50px;
+              background-color: transparent;
+              border: 3px solid white;
+              border-radius: 5px;
+              cursor: pointer; }
+              body .section .first-section .fs-bottom .fsb-right .fsbr-btn:hover {
+                opacity: 60%; }
+              body .section .first-section .fs-bottom .fsb-right .fsbr-btn .fsbrb-a {
+                width: 100%;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+                font-weight: 600;
+                font-size: 15px;
+                font-family: "Ubuntu", sans-serif;
+                transform: translateX(-30px); }
+            body .section .first-section .fs-bottom .fsb-right a {
+              color: #a8afbd;
+              font-size: 13px;
+              text-decoration: underline;
+              font-family: "Varela Round", sans-serif; }
+              body .section .first-section .fs-bottom .fsb-right a:hover {
+                text-decoration: none; }
+        body .section .first-section .loginPopUp {
+          overflow-x: hidden; }
+          body .section .first-section .loginPopUp .popUp {
+            width: 95%;
+            height: 60%;
+            border-radius: 5px; }
+            body .section .first-section .loginPopUp .popUp .lp-top {
+              font-size: 10px; }
+              body .section .first-section .loginPopUp .popUp .lp-top .lp-info {
+                line-height: 27px;
+                width: 550px; }
+                body .section .first-section .loginPopUp .popUp .lp-top .lp-info p {
+                  font-size: 15px; }
+            body .section .first-section .loginPopUp .popUp .lp-middle {
+              height: 215px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs {
+                margin-bottom: 25px;
+                padding-left: 37px;
+                margin-top: 10px; }
+                body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpe-i {
+                  width: 600px; }
+                body .section .first-section .loginPopUp .popUp .lp-middle .lpm-inputs .lpp-i {
+                  width: 600px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-forgot {
+                font-size: 16px;
+                margin-left: 40px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-login-btn {
+                width: 250px;
+                position: absolute;
+                margin: 26px 0 0 30px; }
+              body .section .first-section .loginPopUp .popUp .lp-middle .lpm-regs-btn {
+                width: 250px;
+                margin: 26px 0 0 395px; }
+            body .section .first-section .loginPopUp .popUp .lp-bottom {
+              margin-top: 90px; }
+              body .section .first-section .loginPopUp .popUp .lp-bottom p {
+                margin-top: 40px;
+                color: white;
+                padding: 0 0 0 20px; }
+              body .section .first-section .loginPopUp .popUp .lp-bottom a {
+                margin-top: 40px;
+                padding: 0 20px 100px 0; }
+        body .section .first-section .registerPopUp {
+          width: 100%;
+          overflow-x: hidden;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px; }
+          body .section .first-section .registerPopUp .resPop {
+            width: 95%;
+            margin-top: 280px;
+            border-radius: 5px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpe-i {
+              width: 610px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-inputs .rpp-i {
+              width: 610px; }
+            body .section .first-section .registerPopUp .resPop .rp-container .rpm-regs-btn {
+              width: 635px; }
+      body .section .second-section {
+        height: 300%;
+        width: 100%;
+        background-color: #101013;
+        display: flex;
+        align-items: center;
+        flex-direction: column; }
+        body .section .second-section .ss-top {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 110px;
+          margin-bottom: 70px; }
+          body .section .second-section .ss-top p:first-child {
+            color: #00ed82;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 10px; }
+          body .section .second-section .ss-top h1 {
+            color: white;
+            font-size: 30px;
+            font-family: "Ubuntu", sans-serif;
+            margin-top: 10px;
+            margin-bottom: 40px; }
+          body .section .second-section .ss-top p:last-child {
+            width: 90%;
+            height: 40px;
+            text-align: center;
+            color: white;
+            font-family: "Varela Round", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-right: 40px; }
+        body .section .second-section .ss-middle {
+          width: 100%;
+          height: 600px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          margin-right: 95px;
+          justify-content: center;
+          align-items: center; }
+          body .section .second-section .ss-middle .chapter-1,
+          body .section .second-section .ss-middle .chapter-2,
+          body .section .second-section .ss-middle .chapter-3,
+          body .section .second-section .ss-middle .chapter-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            height: 200px;
+            width: 120px; }
+            body .section .second-section .ss-middle .chapter-1::after,
+            body .section .second-section .ss-middle .chapter-2::after,
+            body .section .second-section .ss-middle .chapter-3::after,
+            body .section .second-section .ss-middle .chapter-4::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 900px 0px 100px rgba(0, 0, 0, 0.4); }
+            body .section .second-section .ss-middle .chapter-1 img,
+            body .section .second-section .ss-middle .chapter-2 img,
+            body .section .second-section .ss-middle .chapter-3 img,
+            body .section .second-section .ss-middle .chapter-4 img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; }
+            body .section .second-section .ss-middle .chapter-1 .c1-h,
+            body .section .second-section .ss-middle .chapter-1 .c2-h,
+            body .section .second-section .ss-middle .chapter-1 .c3-h,
+            body .section .second-section .ss-middle .chapter-1 .c4-h,
+            body .section .second-section .ss-middle .chapter-2 .c1-h,
+            body .section .second-section .ss-middle .chapter-2 .c2-h,
+            body .section .second-section .ss-middle .chapter-2 .c3-h,
+            body .section .second-section .ss-middle .chapter-2 .c4-h,
+            body .section .second-section .ss-middle .chapter-3 .c1-h,
+            body .section .second-section .ss-middle .chapter-3 .c2-h,
+            body .section .second-section .ss-middle .chapter-3 .c3-h,
+            body .section .second-section .ss-middle .chapter-3 .c4-h,
+            body .section .second-section .ss-middle .chapter-4 .c1-h,
+            body .section .second-section .ss-middle .chapter-4 .c2-h,
+            body .section .second-section .ss-middle .chapter-4 .c3-h,
+            body .section .second-section .ss-middle .chapter-4 .c4-h {
+              width: 50px;
+              height: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              z-index: 9999999;
+              width: 300px;
+              height: 50px;
+              position: absolute;
+              color: white;
+              margin-top: 15px;
+              font-weight: 300;
+              margin-left: 20px; }
+              body .section .second-section .ss-middle .chapter-1 .c1-h p,
+              body .section .second-section .ss-middle .chapter-1 .c2-h p,
+              body .section .second-section .ss-middle .chapter-1 .c3-h p,
+              body .section .second-section .ss-middle .chapter-1 .c4-h p,
+              body .section .second-section .ss-middle .chapter-2 .c1-h p,
+              body .section .second-section .ss-middle .chapter-2 .c2-h p,
+              body .section .second-section .ss-middle .chapter-2 .c3-h p,
+              body .section .second-section .ss-middle .chapter-2 .c4-h p,
+              body .section .second-section .ss-middle .chapter-3 .c1-h p,
+              body .section .second-section .ss-middle .chapter-3 .c2-h p,
+              body .section .second-section .ss-middle .chapter-3 .c3-h p,
+              body .section .second-section .ss-middle .chapter-3 .c4-h p,
+              body .section .second-section .ss-middle .chapter-4 .c1-h p,
+              body .section .second-section .ss-middle .chapter-4 .c2-h p,
+              body .section .second-section .ss-middle .chapter-4 .c3-h p,
+              body .section .second-section .ss-middle .chapter-4 .c4-h p {
+                font-size: 10px;
+                width: 50px;
+                font-family: "Varela Round", sans-serif;
+                margin-top: 15px;
+                position: absolute;
+                margin-right: 50px;
+                margin-bottom: 80px; }
+              body .section .second-section .ss-middle .chapter-1 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-1 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-2 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-3 .c4-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c1-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c2-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c3-h h3,
+              body .section .second-section .ss-middle .chapter-4 .c4-h h3 {
+                font-family: "Ubuntu", sans-serif;
+                font-size: 10px;
+                margin-top: 45px;
+                position: absolute;
+                font-weight: 300;
+                margin-right: 30px;
+                margin-bottom: 50px; }
+        body .section .second-section .ss-bottom {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          font-family: "Ubuntu", sans-serif; }
+          body .section .second-section .ss-bottom p:nth-child(1) {
+            padding-top: 80px;
+            margin-top: 10px;
+            color: #00ed82;
+            font-size: 14px;
+            font-weight: 500;
+            pointer-events: none;
+            text-align: center; }
+          body .section .second-section .ss-bottom h1 {
+            margin-top: 35px;
+            color: white;
+            font-size: 33px;
+            pointer-events: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex; }
+          body .section .second-section .ss-bottom p:nth-child(3) {
+            margin-top: 35px;
+            width: 85%;
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            pointer-events: none; }
+          body .section .second-section .ss-bottom p:nth-child(4) {
+            margin-top: 40px;
+            width: 85%;
+            font-size: 12px;
+            color: #989da7;
+            text-align: center;
+            pointer-events: none; }
+          body .section .second-section .ss-bottom a {
+            margin-top: 40px;
+            color: #d0d5df;
+            text-decoration: underline;
+            font-family: "Varela Round", sans-serif;
+            font-size: 15px;
+            font-weight: 700; }
+          body .section .second-section .ss-bottom .ssb-down {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            body .section .second-section .ss-bottom .ssb-down .fa-chevron-down {
+              -webkit-animation: move-up-and-down 1s infinite alternate;
+              -moz-animation: move-up-and-down 1s infinite alternate;
+              -o-animation: move-up-and-down 1s infinite alternate;
+              animation: move-up-and-down 1s infinite alternate; }
+  @keyframes move-up-and-down {
+    0% {
+      transform: translateY(0); }
+    100% {
+      transform: translateY(-15px); } }
+      body .section .third-section {
+        width: 90%;
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap; }
+        body .section .third-section .ts-bg-container {
+          overflow-y: hidden; }
+          body .section .third-section .ts-bg-container .ts-navbar {
+            position: absolute;
+            z-index: 99999;
+            display: flex;
+            color: white;
+            width: 100%;
+            height: 100px;
+            margin: 50px 0 0 30px;
+            justify-content: space-between;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 700;
+            cursor: pointer; }
+            body .section .third-section .ts-bg-container .ts-navbar .tsn-white-underline {
+              width: 101px;
+              height: 6px;
+              background-color: white;
+              position: absolute;
+              margin-top: 40px; }
+          body .section .third-section .ts-bg-container .tsn-ls-bg {
+            height: 1020px;
+            width: 100%;
+            background-image: url(huluLogin-img/unset1-res.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-about {
+              z-index: 999999;
+              width: 100px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 580px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs,
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn,
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-cbs img,
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-espn img,
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-nflntw img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info .tsn-ls-icons .tsn-ls-fs1 img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 690px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-ls-bg .tsn-ls-info a {
+              z-index: 9999;
+              margin: 690px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+          body .section .third-section .ts-bg-container .tsn-bn-bg {
+            display: none;
+            height: 1020px;
+            width: 100%;
+            background-image: url(huluLogin-img/unset1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            margin-left: 100%;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-about {
+              z-index: 999999;
+              width: 700px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 560px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-abc img {
+                  height: 89%;
+                  width: 89%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-cnn img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain;
+                  margin-top: 3.5px; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-msnbc img {
+                  height: 85%;
+                  width: 85%;
+                  object-fit: contain;
+                  margin-left: 3.5px; }
+              body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info .tsn-bn-icons .tsn-bn-foxn img {
+                  height: 50%;
+                  width: 50%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 660px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-bn-bg .tsn-bn-info a {
+              z-index: 9999;
+              margin: 660px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+          body .section .third-section .ts-bg-container .tsn-be-bg {
+            height: 1020px;
+            width: 1800px;
+            display: none;
+            background-image: url(huluLogin-img/unset2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            margin-left: 200%;
+            overflow: hidden; }
+            body .section .third-section .ts-bg-container .tsn-be-bg::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              box-shadow: inset 700px 300px 200px 170px rgba(0, 0, 0, 0.445); }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info h1 {
+              z-index: 999999;
+              color: white;
+              font-weight: 700;
+              font-family: "Ubuntu", sans-serif;
+              position: absolute;
+              margin: 355px 0 0 230px;
+              font-size: 60px;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-about {
+              z-index: 999999;
+              width: 700px;
+              color: white;
+              font-weight: 700;
+              position: absolute;
+              margin: 460px 0 0 230px;
+              font-size: 23px;
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 100;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons {
+              z-index: 9999;
+              width: 350px;
+              height: 100px;
+              display: flex;
+              position: absolute;
+              margin: 560px 0 0 230px;
+              justify-content: space-between; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-emmy img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-gga img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-grammy img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+              body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
+                body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info .tsn-be-icons .tsn-be-oscars img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: contain; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info p {
+              z-index: 9999;
+              font-size: 12px;
+              margin: 660px 0 0 230px;
+              color: #a1a1a1;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              pointer-events: none;
+              pointer-events: none; }
+            body .section .third-section .ts-bg-container .tsn-be-bg .tsn-be-info a {
+              z-index: 9999;
+              margin: 660px 0 0 675px;
+              text-decoration: underline;
+              color: #a1a1a1;
+              font-size: 12px;
+              position: absolute;
+              font-family: "Ubuntu", sans-serif;
+              cursor: pointer; }
+      body .section .fourth-section {
+        width: 101%;
+        height: 90%;
+        margin-top: 9%;
+        background-color: #101013;
+        font-family: "Ubuntu", sans-serif;
+        display: none; }
+        body .section .fourth-section .fours-header {
+          width: 100%;
+          height: 200px;
+          margin-top: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 55px;
+          margin-bottom: 30px; }
+          body .section .fourth-section .fours-header h1 {
+            color: white;
+            font-size: 65px;
+            font-weight: 500;
+            margin-top: 160px;
+            font-family: "Ubuntu", sans-serif;
+            pointer-events: none; }
+          body .section .fourth-section .fours-header p:nth-child(2) {
+            margin-top: 30px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 23px;
+            pointer-events: none; }
+          body .section .fourth-section .fours-header p:nth-child(3) {
+            margin-top: 5px;
+            color: white;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            pointer-events: none; }
+        body .section .fourth-section .fours-top {
+          width: 100%;
+          height: 260px;
+          margin-top: 90px;
+          display: flex;
+          align-items: center;
+          border-top: 1px solid #707070;
+          border-bottom: 1px solid #707070;
+          justify-content: space-between;
+          position: sticky; }
+          body .section .fourth-section .fours-top .forst-left {
+            display: flex;
+            height: 100%;
+            width: 40%;
+            padding-top: 210px;
+            padding-left: 160px; }
+            body .section .fourth-section .fours-top .forst-left .ftl-left {
+              width: 110px;
+              color: white;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 16px;
+              font-weight: 700;
+              pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-left .ftl-left img {
+                width: 42px;
+                height: 42px;
+                margin-left: 27px;
+                margin-top: 15px;
+                object-fit: contain;
+                position: absolute; }
+            body .section .fourth-section .fours-top .forst-left .ftl-center {
+              width: 75px;
+              height: 40px;
+              border-radius: 30px;
+              cursor: pointer; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .changer {
+                width: 75px;
+                height: 39px;
+                background-color: #48494b;
+                border-radius: 30px;
+                margin-top: 3px;
+                transition: all ease-in-out 500ms; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBg {
+                background-color: #00ed82; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .button {
+                width: 44px;
+                height: 44px;
+                background-color: white;
+                border-radius: 50%;
+                position: absolute; }
+              body .section .fourth-section .fours-top .forst-left .ftl-center .buttonBtn {
+                margin-left: 34px; }
+            body .section .fourth-section .fours-top .forst-left .ftl-right {
+              margin-left: 10px;
+              color: white;
+              font-family: "Ubuntu", sans-serif;
+              font-size: 16px;
+              font-weight: 700;
+              pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-left .ftl-right img {
+                width: 11%;
+                height: 60px;
+                object-fit: contain;
+                position: absolute; }
+          body .section .fourth-section .fours-top .forst-right {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            padding-right: 170px;
+            margin-left: 30px; }
+            body .section .fourth-section .fours-top .forst-right .ftr-left {
+              width: 50%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              padding-top: 5px; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .button {
+                background-color: #00ed82;
+                width: 155px;
+                height: 37px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                margin-block: 25px; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .button p {
+                  font-size: 12px;
+                  font-family: "Varela Round", sans-serif;
+                  font-weight: 600;
+                  pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(2) {
+                color: #616368;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left p:nth-child(3) {
+                color: #fff;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 23px;
+                font-weight: 600;
+                margin-top: 10px;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r {
+                margin-top: 20px;
+                height: 60px;
+                width: 320px;
+                background-color: #fff;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r:hover {
+                  background-color: #dce2ecd5; }
+                body .section .fourth-section .fours-top .forst-right .ftr-left .price-btn-r p {
+                  text-align: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-size: 20px;
+                  font-weight: 500;
+                  color: black;
+                  pointer-events: none; }
+            body .section .fourth-section .fours-top .forst-right .ftr-right {
+              width: 50%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              padding-top: 91px;
+              margin-left: 30px; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(1) {
+                color: #616368;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right p:nth-child(2) {
+                color: #fff;
+                font-family: "Ubuntu", sans-serif;
+                font-size: 23px;
+                font-weight: 600;
+                margin-top: 10px;
+                pointer-events: none; }
+              body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l {
+                margin-top: 20px;
+                height: 60px;
+                width: 320px;
+                background-color: #fff;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer; }
+                body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l:hover {
+                  background-color: #dce2ecd5; }
+                body .section .fourth-section .fours-top .forst-right .ftr-right .price-btn-l p {
+                  text-align: center;
+                  font-family: "Ubuntu", sans-serif;
+                  font-size: 20px;
+                  font-weight: 500;
+                  color: #101013;
+                  pointer-events: none; }
+        body .section .fourth-section .fours-middle {
+          width: 70%;
+          height: 760px;
+          margin-left: 180px;
+          overflow: hidden;
+          pointer-events: none; }
+          body .section .fourth-section .fours-middle .forsm-first-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 50%; }
+            body .section .fourth-section .fours-middle .forsm-first-list div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 70px;
+              width: 100%;
+              color: white;
+              border-bottom: 1px solid #707070; }
+              body .section .fourth-section .fours-middle .forsm-first-list div p {
+                align-items: center;
+                width: 75%;
+                font-weight: 500;
+                font-size: 18px; }
+              body .section .fourth-section .fours-middle .forsm-first-list div div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: none; }
+                body .section .fourth-section .fours-middle .forsm-first-list div div p {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                  body .section .fourth-section .fours-middle .forsm-first-list div div p .fa-minus {
+                    color: white; }
+                  body .section .fourth-section .fours-middle .forsm-first-list div div p i {
+                    font-size: 30px;
+                    color: #00ed82; }
+            body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom {
+              margin-top: 10px;
+              padding-bottom: 90px;
+              height: 1px;
+              width: 100%;
+              display: flex;
+              border-bottom: none;
+              justify-content: start;
+              align-items: start; }
+              body .section .fourth-section .fours-middle .forsm-first-list .ffl-bottom p {
+                color: white;
+                font-size: 12px;
+                width: 40%; }
+          body .section .fourth-section .fours-middle .forsm-second-list {
+            color: white;
+            width: 100%;
+            height: 200px;
+            margin-top: 380px; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(1) {
+              font-size: 40px;
+              font-weight: 600;
+              font-family: "Ubuntu", sans-serif;
+              width: 100%; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-header p:nth-child(2) {
+              font-size: 20px;
+              margin-top: 30px;
+              border-bottom: 2px solid #616368;
+              padding-bottom: 30px; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle .starz {
+              border-bottom: none; }
+            body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 70px;
+              width: 100%;
+              color: white;
+              border-bottom: 1px solid #707070; }
+              body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div p {
+                align-items: center;
+                width: 75%;
+                font-weight: 500;
+                font-size: 18px; }
+              body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: none; }
+                body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                  body .section .fourth-section .fours-middle .forsm-second-list .fsmsl-middle div div p i {
+                    font-size: 30px;
+                    color: #00ed82; }
+          body .section .fourth-section .fours-middle .forsmSecondList {
+            margin-top: 195px; }
+        body .section .fourth-section .foursMiddleAc {
+          height: 1260px; }
+        body .section .fourth-section .forsm-show-btn {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          height: 50px;
+          margin-left: 15%;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          border-top: 1px solid #707070;
+          border-bottom: 1px solid #707070;
+          transition: 300ms all ease-in-out;
+          cursor: pointer; }
+          body .section .fourth-section .forsm-show-btn p {
+            text-align: center;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: white;
+            margin-left: 45%; }
+          body .section .fourth-section .forsm-show-btn i {
+            font-size: 22px;
+            color: white;
+            margin-left: 10px; }
+      body .section .foruthSectionAc {
+        height: 150%; }
+      body .section .fivth-section {
+        width: 100%;
+        height: 840px;
+        background: #dadce0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Ubuntu", sans-serif; }
+        body .section .fivth-section .fvths-top {
+          margin-top: 50px;
+          margin-right: 40px;
+          width: 80%;
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          align-items: start;
+          justify-content: space-between; }
+          body .section .fivth-section .fvths-top p {
+            font-weight: 500;
+            font-size: 14px;
+            color: #39393a;
+            padding-bottom: 20px;
+            pointer-events: none;
+            border-bottom: 1px solid #acadaf;
+            width: 100%; }
+          body .section .fivth-section .fvths-top .fvthst-r {
+            width: 100%;
+            gap: 30px;
+            height: 100%;
+            padding-right: 135px;
+            color: #39393a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            pointer-events: none; }
+            body .section .fivth-section .fvths-top .fvthst-r p:first-child {
+              border-bottom: 1px solid #acadaf;
+              width: 100%;
+              padding-bottom: 20px; }
+            body .section .fivth-section .fvths-top .fvthst-r p:last-child {
+              border-bottom: 1px solid #acadaf;
+              width: 100%;
+              padding-bottom: 20px; }
+        body .section .fivth-section .fvths-middle {
+          display: none;
+          width: 70%;
+          height: 200px;
+          justify-content: space-between;
+          margin-right: 130px;
+          padding-block: 20px; }
+          body .section .fivth-section .fvths-middle .fvthsm-1,
+          body .section .fivth-section .fvths-middle .fvthsm-2,
+          body .section .fivth-section .fvths-middle .fvthsm-3,
+          body .section .fivth-section .fvths-middle .fvthsm-4,
+          body .section .fivth-section .fvths-middle .fvthsm-5,
+          body .section .fivth-section .fvths-middle .fvthsm-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 20px;
+            text-decoration: none; }
+            body .section .fivth-section .fvths-middle .fvthsm-1 a,
+            body .section .fivth-section .fvths-middle .fvthsm-2 a,
+            body .section .fivth-section .fvths-middle .fvthsm-3 a,
+            body .section .fivth-section .fvths-middle .fvthsm-4 a,
+            body .section .fivth-section .fvths-middle .fvthsm-5 a,
+            body .section .fivth-section .fvths-middle .fvthsm-6 a {
+              color: #616368;
+              font-size: 18px;
+              font-weight: 500; }
+        body .section .fivth-section .fvths-bottom {
+          display: flex;
+          flex-direction: column;
+          border-top: transparent 1px solid;
+          width: 80%;
+          height: 200px;
+          padding-top: 40px;
+          margin-top: 140px; }
+          body .section .fivth-section .fvths-bottom .fvthsb-ico {
+            width: 200px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            body .section .fivth-section .fvths-bottom .fvthsb-ico img {
+              width: 25px;
+              height: 25px; }
+          body .section .fivth-section .fvths-bottom .fvthsb-info {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            height: 10px;
+            gap: 20px; }
+            body .section .fivth-section .fvths-bottom .fvthsb-info a {
+              margin-left: 14px;
+              color: #616368;
+              font-family: "Varela Round", sans-serif; }
+            body .section .fivth-section .fvths-bottom .fvthsb-info div a {
+              margin-left: 0px; } }
+
+/*# sourceMappingURL=style.css.map */
