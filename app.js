@@ -120,6 +120,9 @@ allInput.forEach((e) => {
   let signCheck = localStorage.getItem("signData");
   signCheck = JSON.parse(signCheck);
 
+    console.log(signCheck);
+    console.log(localStorage);
+   
   if (!signCheck) {
     return;
   } else {
