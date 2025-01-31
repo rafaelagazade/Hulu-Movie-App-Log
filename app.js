@@ -116,16 +116,18 @@ allInput.forEach((e) => {
   });
 });
 
-// window.addEventListener("load", () => {
-//  let signCheck = localStorage.getItem("signData");
-//  signCheck = JSON.parse(signCheck);
+ window.addEventListener("load", () => {
+  let signCheck = localStorage.getItem("signData");
+  signCheck = JSON.parse(signCheck);
 
-//  if (!signCheck) {
-//    return;
-//  } else {
+  if (!signCheck) {
+    return;
+  } else {
 //    window.location.href = "https://hulu-movie-app-main.vercel.app/";
-//  }
-//});
+    console.log(signCheck);
+    console.log(localStorage);
+  }
+});
 
 regRegBtn.onclick = () => {
   const regEmail = regEmailInput.value;
