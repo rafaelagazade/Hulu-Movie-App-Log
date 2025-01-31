@@ -120,16 +120,17 @@ allInput.forEach((e) => {
   let signCheck = localStorage.getItem("signData");
   signCheck = JSON.parse(signCheck);
 
-    console.log(signCheck);
-    console.log(localStorage);
-    console.log(sessionStorage);
+  // console.log(signCheck);
+  // console.log(localStorage);
+  // console.log(sessionStorage);
    
   if (!signCheck) {
     return;
   } else {
 //    window.location.href = "https://hulu-movie-app-main.vercel.app/";
-    console.log(signCheck);
-    console.log(localStorage);
+    //console.log(signCheck);
+    //console.log(localStorage);
+    //console.log(sessionStorage);
   }
 });
 
@@ -141,14 +142,13 @@ regRegBtn.onclick = () => {
     password: regPassword,
   };
 
-  console.log(signData);
-  console.log(sessionStorage);
+  //console.log(signData);
+  //console.log(sessionStorage);
 
   signData = JSON.stringify(signData);
 
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
-
     sessionStorage.setItem("signData", signData);
     
     logPopUp.style.display = "flex";
