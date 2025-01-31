@@ -122,6 +122,7 @@ allInput.forEach((e) => {
 
     console.log(signCheck);
     console.log(localStorage);
+    console.log(sessionStorage);
    
   if (!signCheck) {
     return;
@@ -147,9 +148,6 @@ regRegBtn.onclick = () => {
 
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
-    
-    sessionStorage.setItem("email", email);
-    sessionStorage.setItem("password", password);
 
     sessionStorage.setItem("signData", signData);
     
