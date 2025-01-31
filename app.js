@@ -141,11 +141,18 @@ regRegBtn.onclick = () => {
   };
 
   console.log(signData);
+  console.log(sessionStorage);
 
   signData = JSON.stringify(signData);
 
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
+    
+    sessionStorage.setItem("email", email);
+    sessionStorage.setItem("password", password);
+
+    sessionStorage.setItem("signData", signData);
+    
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
     // location.reload();
