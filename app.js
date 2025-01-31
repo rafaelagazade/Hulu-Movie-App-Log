@@ -127,13 +127,10 @@ allInput.forEach((e) => {
   if (!signCheck) {
     return;
   } else {
-    window.location.href = `https://hulu-movie-app-main.vercel.app/?email=${encodeURIComponent(regEmail)}&password=${encodeURIComponent(regPassword)}`;
+    window.location.href = `https://hulu-movie-app-main.vercel.app/`;
     //console.log(signCheck);
     //console.log(localStorage);
     //console.log(sessionStorage);
-    console.log(`https://hulu-movie-app-main.vercel.app/?email=${encodeURIComponent(regEmail)}&password=${encodeURIComponent(regPassword)}`)
-    console.log(regEmail)
-    console.log(regPassword)
   }
 });
 
@@ -169,7 +166,7 @@ logInBtn.addEventListener("click", () => {
 
   if (EmailInput === Data?.email && PasswordInput === Data?.password) {
     logInBtn.style.background = "green";
-    window.location.href = "https://hulu-movie-app-main.vercel.app/";
+    window.location.href = "`https://hulu-movie-app-main.vercel.app/?email=${encodeURIComponent(EmailInput)}&password=${encodeURIComponent(PasswordInput)}`";
     logEmailInput.value = "";
     logPasswordInput.value = "";
   } else {
