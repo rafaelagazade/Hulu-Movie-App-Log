@@ -123,7 +123,7 @@ window.addEventListener("load", () => {
   if (!signCheck) {
     return;
   } else {
-    window.location.href = "***";
+    window.location.href = "https://hulu-movie-app-main.vercel.app/";
   }
 });
 
@@ -156,7 +156,7 @@ logInBtn.addEventListener("click", () => {
 
   if (EmailInput === Data?.email && PasswordInput === Data?.password) {
     logInBtn.style.background = "green";
-    window.location.href = "***";
+    window.location.href = "https://hulu-movie-app-main.vercel.app/";
     logEmailInput.value = "";
     logPasswordInput.value = "";
   } else {
