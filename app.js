@@ -131,6 +131,9 @@ allInput.forEach((e) => {
     //console.log(signCheck);
     //console.log(localStorage);
     //console.log(sessionStorage);
+    console.log(`https://hulu-movie-app-main.vercel.app/?email=${encodeURIComponent(regEmail)}&password=${encodeURIComponent(regPassword)}`)
+    console.log(regEmail)
+    console.log(regPassword)
   }
 });
 
