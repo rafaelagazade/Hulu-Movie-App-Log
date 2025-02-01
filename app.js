@@ -168,12 +168,12 @@ logInBtn.addEventListener("click", () => {
   const EmailInput = logEmailInput.value;
   const PasswordInput = logPasswordInput.value;
 
-  const regEmail1 = encodeURIComponent(logEmailInput.value); // Encode special characters
-  const regPassword2 = encodeURIComponent(logPasswordInput.value);
+  const regEmail1 = encodeURIComponent(EmailInput); // Encode special characters
+  const regPassword2 = encodeURIComponent(PasswordInput);
 
   if (EmailInput === Data?.email && PasswordInput === Data?.password) {
     logInBtn.style.background = "green";
-    window.location.href = "`https://hulu-movie-app-main.vercel.app/?email=${regEmail1}&password=${regPassword2}`";
+    window.location.href = `https://hulu-movie-app-main.vercel.app/?email=${regEmail1}&password=${regPassword2}`;
     logEmailInput.value = "";
     logPasswordInput.value = "";
   } else {
