@@ -127,7 +127,7 @@ allInput.forEach((e) => {
   if (!signCheck) {
     return;
   } else {
-    window.location.href = `https://hulu-movie-app-main.vercel.app/`;
+    //window.location.href = `https://hulu-movie-app-main.vercel.app/`;
     //console.log(signCheck);
     //console.log(localStorage);
     //console.log(sessionStorage);
