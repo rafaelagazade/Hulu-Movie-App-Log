@@ -137,6 +137,10 @@ allInput.forEach((e) => {
 regRegBtn.onclick = () => {
   const regEmail = regEmailInput.value;
   const regPassword = regPasswordInput.value;
+
+  // const regEmail = encodeURIComponent(regEmailInput.value); // Encode special characters
+  // const regPassword = encodeURIComponent(regPasswordInput.value);
+  
   let signData = {
     email: regEmail,
     password: regPassword,
@@ -149,7 +153,7 @@ regRegBtn.onclick = () => {
 
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
-    sessionStorage.setItem("signData", signData);
+    //sessionStorage.setItem("signData", signData);
     
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
@@ -164,9 +168,12 @@ logInBtn.addEventListener("click", () => {
   const EmailInput = logEmailInput.value;
   const PasswordInput = logPasswordInput.value;
 
+  const regEmail1 = encodeURIComponent(logEmailInput.value); // Encode special characters
+  const regPassword2 = encodeURIComponent(logPasswordInput.value);
+
   if (EmailInput === Data?.email && PasswordInput === Data?.password) {
     logInBtn.style.background = "green";
-    window.location.href = "`https://hulu-movie-app-main.vercel.app/?email=${encodeURIComponent(EmailInput)}&password=${encodeURIComponent(PasswordInput)}`";
+    window.location.href = "`https://hulu-movie-app-main.vercel.app/?email=${regEmail1}&password=${regPassword2}`";
     logEmailInput.value = "";
     logPasswordInput.value = "";
   } else {
