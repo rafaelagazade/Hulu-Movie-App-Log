@@ -49,7 +49,7 @@ const loginResBtn = document.querySelector(".responsivePopUp .rp-2");
 const responsivLogIn = document.querySelector(".responsivLogIn");
 
 const API_KEY = "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"; // Replace with your JSONBin API Key
-const BIN_ID = "679eef37e41b4d34e4829eb6"; // Replace with your JSONBin Bin ID
+const BIN_ID = "679ef92dad19ca34f8f85e47"; // Replace with your JSONBin Bin ID
 
 hamburger.addEventListener("click", () => {
   resPop.classList.toggle("active");
@@ -153,7 +153,7 @@ window.addEventListener("load", async () => {
 // Function to fetch user data from JSONBin API
 async function getUserData() {
   try {
-    const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6/latest", {
+    const response = await fetch("https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47/latest", {
       method: "GET",
       headers: {
         "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
@@ -216,7 +216,7 @@ async function storeUserData(email, password) {
   usersList.push(newUser);
 
   // Send the updated user list back to JSONBin
-  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
+  const response = await fetch("https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -233,7 +233,7 @@ async function storeUserData(email, password) {
 }
 
 async function getUserData() {
-  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
+  const response = await fetch("https://api.jsonbin.io/v3/b/6679ef92dad19ca34f8f85e47", {
     method: "GET",
     headers: {
       "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2",
