@@ -48,6 +48,9 @@ const resPop = document.querySelector(".responsivePopUp");
 const loginResBtn = document.querySelector(".responsivePopUp .rp-2");
 const responsivLogIn = document.querySelector(".responsivLogIn");
 
+const API_KEY = "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"; // Replace with your JSONBin API Key
+const BIN_ID = "679ec18ae41b4d34e4828d53"; // Replace with your JSONBin Bin ID
+
 hamburger.addEventListener("click", () => {
   resPop.classList.toggle("active");
 });
@@ -116,31 +119,42 @@ allInput.forEach((e) => {
   });
 });
 
- window.addEventListener("load", () => {
+ window.addEventListener("load", async () => {
   let signCheck = localStorage.getItem("signData");
   signCheck = JSON.parse(signCheck);
 
-  // console.log(signCheck);
-  // console.log(localStorage);
-  // console.log(sessionStorage);
-   
   if (!signCheck) {
     return;
   } else {
-    //window.location.href = `https://hulu-movie-app-main.vercel.app/`;
-    //console.log(signCheck);
-    //console.log(localStorage);
-    //console.log(sessionStorage);
+    console.log("User data found in localStorage:", signCheck);
   }
 });
 
+// ✅ Store user data in JSONBin
+async function storeUserData(email, password) {
+  const userData = { email, password };
+
+  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"  // ⚠️ NEVER expose API key in frontend
+    },
+    body: JSON.stringify(userData)
+  });
+
+  if (response.ok) {
+    console.log("User data stored successfully!");
+  } else {
+    console.error("Failed to store user data");
+  }
+}
+
+// Call this function when user registers
 regRegBtn.onclick = () => {
   const regEmail = regEmailInput.value;
   const regPassword = regPasswordInput.value;
 
-  // const regEmail = encodeURIComponent(regEmailInput.value); // Encode special characters
-  // const regPassword = encodeURIComponent(regPasswordInput.value);
-  
   let signData = {
     email: regEmail,
     password: regPassword,
@@ -149,8 +163,8 @@ regRegBtn.onclick = () => {
   //console.log(signData);
   //console.log(sessionStorage);
 
-  signData = JSON.stringify(signData);
-
+ let signData = JSON.stringify(signData);
+  
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
     //sessionStorage.setItem("signData", signData);
@@ -159,6 +173,29 @@ regRegBtn.onclick = () => {
     regPop.style.display = "none";
     // location.reload();
   }
+
+  if (regEmail && regPassword) {
+    storeUserData(regEmail, regPassword);
+  }
+
+  async function storeUserData(email, password) {
+  const userData = { email, password };
+
+  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"  // ⚠️ NEVER expose API key in frontend
+    },
+    body: JSON.stringify(userData)
+  });
+
+  if (response.ok) {
+    console.log("User data stored successfully!");
+  } else {
+    console.error("Failed to store user data");
+  }
+}
 };
 
 logInBtn.addEventListener("click", () => {
