@@ -163,7 +163,7 @@ regRegBtn.onclick = () => {
   //console.log(signData);
   //console.log(sessionStorage);
 
- let signData = JSON.stringify(signData);
+ //let signData = JSON.stringify(signData);
   
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
