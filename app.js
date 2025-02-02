@@ -232,6 +232,23 @@ regRegBtn.onclick = () => {
   }
 };
 
+async function storeUserSession(email) {
+  const response = await fetch("https://api.jsonbin.io/v3/b/SESSION_BIN_ID", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "YOUR_API_KEY"
+    },
+    body: JSON.stringify({ session: { email } }) // Save active session
+  });
+
+  if (response.ok) {
+    console.log("Session stored successfully!");
+  } else {
+    console.error("Failed to store session.");
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 logInBtn.addEventListener("click", async () => {
