@@ -110,8 +110,8 @@ allInput.forEach((e) => {
     //const emailValue = logEmailInput.value;
     //const passwordValue = logPasswordInput.value;
 
-    const emailValue != "0";
-    const passwordValue != "0";
+    const emailValue = "0";
+    const passwordValue = "0";
     
     if (emailValue && passwordValue) {
       logInBtn.style.backgroundColor = "#00ed82";
