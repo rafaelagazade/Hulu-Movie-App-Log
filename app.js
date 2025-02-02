@@ -270,17 +270,29 @@ async function storeUserData(email, password) {
 }
 
 // Trigger registration when the registration button is clicked
-regRegBtn.onclick = async () => {
+//regRegBtn.onclick = async () => {
         
+//  const regEmail = regEmailInput.value.trim();
+//  const regPassword = regPasswordInput.value.trim();
+
+//  if (regEmail && regPassword) {
+    // Store session data (email) in the session bin
+//    await storeSession(regEmail);
+    
+    // Store user data (email and password) in the user bin
+//    await storeUserData(regEmail, regPassword);
+    
+    // Display success and hide registration popup
+//    logPopUp.style.display = "flex";
+//    regPop.style.display = "none";
+//  } else {
+//    alert("Please enter both email and password.");
+//  }
+// };
+
+regBtn.onclick = async () => {
   const regEmail = regEmailInput.value.trim();
   const regPassword = regPasswordInput.value.trim();
-  let airmir = 5
-  const countdownInterval = setInterval(() => {
-      if (countdown > 0) {
-        alert(`Redirecting in ${countdown} seconds...`);
-        countdown--;
-      } else {
-        clearInterval(countdownInterval);
 
   if (regEmail && regPassword) {
     // Store session data (email) in the session bin
@@ -288,10 +300,23 @@ regRegBtn.onclick = async () => {
     
     // Store user data (email and password) in the user bin
     await storeUserData(regEmail, regPassword);
-    
-    // Display success and hide registration popup
-    logPopUp.style.display = "flex";
-    regPop.style.display = "none";
+
+    // Start 5-second countdown before showing success message
+    let countdown = 5;
+    const countdownInterval = setInterval(() => {
+      if (countdown > 0) {
+        alert(`Redirecting in ${countdown} seconds...`);
+        countdown--;
+      } else {
+        clearInterval(countdownInterval);
+        
+        // Display success and hide registration popup
+        logPopUp.style.display = "flex";
+        regPop.style.display = "none";
+
+        alert("Registration successful! You can now log in.");
+      }
+    }, 1000);
   } else {
     alert("Please enter both email and password.");
   }
