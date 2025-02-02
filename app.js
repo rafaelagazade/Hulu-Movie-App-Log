@@ -143,19 +143,12 @@ regRegBtn.onclick = () => {
     email: regEmail,
     password: regPassword,
   };
-
-  //console.log(signData);
-  //console.log(sessionStorage);
-
- //let signData = JSON.stringify(signData);
   
   if (regEmail && regPassword) {
     localStorage.setItem("signData", signData);
-    //sessionStorage.setItem("signData", signData);
     
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
-    // location.reload();
   }
 
   if (regEmail && regPassword) {
@@ -184,21 +177,16 @@ regRegBtn.onclick = () => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-logInBtn.addEventListener("click", () => {
-  let Data = localStorage.getItem("signData");
-  Data = JSON.parse(Data);
+logInBtn.addEventListener("click", async () => {
+  let Data = await getUserData(); // Fetch data from JSONBin
+  console.log("Fetched data:", Data);
 
   const EmailInput = logEmailInput.value;
   const PasswordInput = logPasswordInput.value;
 
-  const regEmail1 = encodeURIComponent(EmailInput); // Encode special characters
-  const regPassword2 = encodeURIComponent(PasswordInput);
-
   if (EmailInput === Data?.email && PasswordInput === Data?.password) {
     logInBtn.style.background = "green";
-    window.location.href = `https://hulu-movie-app-main.vercel.app/?email=${regEmail1}&password=${regPassword2}`;
-    logEmailInput.value = "";
-    logPasswordInput.value = "";
+    window.location.href = "https://hulu-movie-app-main.vercel.app/";
   } else {
     alert("WRONG");
   }
