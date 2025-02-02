@@ -275,6 +275,12 @@ regRegBtn.onclick = async () => {
   const regEmail = regEmailInput.value.trim();
   const regPassword = regPasswordInput.value.trim();
   let airmir = 5
+  const countdownInterval = setInterval(() => {
+      if (countdown > 0) {
+        alert(`Redirecting in ${countdown} seconds...`);
+        countdown--;
+      } else {
+        clearInterval(countdownInterval);
 
   if (regEmail && regPassword) {
     // Store session data (email) in the session bin
