@@ -285,17 +285,18 @@ regRegBtn.onclick = async () => {
     // Display success and hide registration popup
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
-  } else {
-    alert("Please enter both email and password.");
-  }
-  
-  let countdown = 5;
+
+      let countdown = 5;
     const countdownInterval = setInterval(() => {
       if (countdown > 0) {
         alert(`Redirecting in ${countdown} seconds...`);
         countdown--;
       } else {
         clearInterval(countdownInterval);
+    
+  } else {
+    alert("Please enter both email and password.");
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
