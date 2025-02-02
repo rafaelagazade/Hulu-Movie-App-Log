@@ -217,6 +217,27 @@ async function storeUserData(email, password) {
   }
 }
 
+async function storeUserSession(email) {
+  try {
+    const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+      },
+      body: JSON.stringify({ session: { email } }) // Save active session
+    });
+
+    if (response.ok) {
+      console.log("✅ Session stored successfully!");
+    } else {
+      console.error("❌ Failed to store session.");
+    }
+  } catch (error) {
+    console.error("❌ Error storing session:", error);
+  }
+}
+
 // Trigger registration
 regRegBtn.onclick = () => {
   const regEmail = regEmailInput.value;
@@ -229,30 +250,6 @@ regRegBtn.onclick = () => {
     // Display success and hide registration popup
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
-  }
-
-    if (!regEmail) {
-    alert("Please enter an email.");
-    return;
-  }
-
-  try {
-    const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
-      },
-      body: JSON.stringify({ session: { email: regEmail } })  // ✅ Store the correct email
-    });
-
-    if (response.ok) {
-      console.log("✅ Session stored successfully!");
-    } else {
-      console.error("❌ Failed to store session.");
-    }
-  } catch (error) {
-    console.error("❌ Error storing session:", error);
   }
 };
 
