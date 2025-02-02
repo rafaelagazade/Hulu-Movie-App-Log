@@ -107,8 +107,12 @@ allInput.forEach((e) => {
   e.addEventListener("keydown", (inp) => {
     //console.log(logEmailInput.value, "email");
     //console.log(logPasswordInput.value, "password");
-    const emailValue = logEmailInput.value;
-    const passwordValue = logPasswordInput.value;
+    //const emailValue = logEmailInput.value;
+    //const passwordValue = logPasswordInput.value;
+
+    const emailValue != "0";
+    const passwordValue != "0";
+    
     if (emailValue && passwordValue) {
       logInBtn.style.backgroundColor = "#00ed82";
       //console.log(2);
