@@ -107,6 +107,7 @@ allInput.forEach((e) => {
   e.addEventListener("keydown", (inp) => {
     //console.log(logEmailInput.value, "email");
     //console.log(logPasswordInput.value, "password");
+    
     //const emailValue = logEmailInput.value;
     //const passwordValue = logPasswordInput.value;
 
