@@ -169,31 +169,6 @@ window.addEventListener("load", async () => {
 
 async function getUserData() {
   try {
-    const response = await fetch("https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47/latest", {
-      method: "GET",
-      headers: {
-        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
-      }
-    });
-
-    if (!response.ok) throw new Error("API request failed");
-
-    const data = await response.json();
-    
-    // Ensure it returns an array of users
-    return Array.isArray(data.record.users) ? data.record.users : [];
-  } catch (error) {
-    console.error("Error fetching API data:", error);
-    return []; // Return empty array to prevent errors
-  }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Call this function when user registers
-
-async function getUserData() {
-  try {
     const response = await fetch(`https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47/latest`, {
       method: "GET",
       headers: {
