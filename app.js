@@ -271,6 +271,15 @@ async function storeUserData(email, password) {
 
 // Trigger registration when the registration button is clicked
 regRegBtn.onclick = async () => {
+
+  let countdown = 5;
+    const countdownInterval = setInterval(() => {
+      if (countdown > 0) {
+        alert(`Redirecting in ${countdown} seconds...`);
+        countdown--;
+      } else {
+        clearInterval(countdownInterval);
+        
   const regEmail = regEmailInput.value.trim();
   const regPassword = regPasswordInput.value.trim();
 
