@@ -290,7 +290,7 @@ async function storeUserData(email, password) {
 //  }
 // };
 
-regBtn.onclick = async () => {
+regRegBtn.onclick = async () => {
   const regEmail = regEmailInput.value.trim();
   const regPassword = regPasswordInput.value.trim();
 
