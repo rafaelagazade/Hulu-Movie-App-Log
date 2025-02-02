@@ -127,15 +127,19 @@ window.addEventListener("load", async () => {
     return; // No user data stored, so do nothing
   }
 
-  //storedUser = JSON.parse(storedUser); // Convert string to object
+  // Parse the stored user data to convert it from string to object
+  storedUser = JSON.parse(storedUser);
 
   const apiData = await getUserData(); // Fetch data from API
-  if (!apiData) {
-    console.error("Failed to fetch API data.");
+  if (!apiData || apiData.length === 0) {
+    console.error("Failed to fetch API data or no users found.");
     return;
   }
 
-  if (storedUser.email === apiData.email && storedUser.password === apiData.password) {
+  // Loop through the list of users from the API and check for a match
+  const userMatch = apiData.find(user => user.email === storedUser.email && user.password === storedUser.password);
+
+  if (userMatch) {
     console.log("User verified. Redirecting...");
     window.location.href = "https://hulu-movie-app-main.vercel.app/";
   } else {
@@ -153,49 +157,69 @@ async function getUserData() {
       }
     });
 
-    if (!response.ok) {
-      throw new Error("API request failed");
-    }
+    if (!response.ok) throw new Error("API request failed");
 
     const data = await response.json();
-    return data.record; // JSONBin stores data inside 'record'
+    
+    // Ensure it returns an array of users
+    return Array.isArray(data.record.users) ? data.record.users : [];
   } catch (error) {
     console.error("Error fetching API data:", error);
-    return null;
+    return []; // Return empty array to prevent errors
   }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Call this function when user registers
-regRegBtn.onclick = () => {
+regRegBtn.onclick = async () => {
   const regEmail = regEmailInput.value;
   const regPassword = regPasswordInput.value;
+
+  // Ensure email and password are provided
+  if (!regEmail || !regPassword) {
+    alert("Please enter both email and password.");
+    return;
+  }
+
+  // Store the new user in JSONBin
+  await storeUserData(regEmail, regPassword);
+
+  // Update localStorage
+  let signData = { email: regEmail, password: regPassword };
+  signData = JSON.stringify(signData);
+  localStorage.setItem("signData", signData);
+
+  // Show the login pop-up
+  logPopUp.style.display = "flex";
+  regPop.style.display = "none";
+};
 
 async function storeUserData(email, password) {
   const newUser = { email, password };
 
-  // Get existing users
+  // Fetch existing users
   let usersList = await getUserData();
-  if (!usersList) usersList = []; // Initialize if empty
+  if (!usersList) usersList = []; // Initialize users list if empty
 
-  // Check if user already exists
+  // Check if the user already exists
   const userExists = usersList.some(user => user.email === email);
   if (userExists) {
     alert("User already registered!");
     return;
   }
 
-  usersList.push(newUser); // Add new user to the list
+  // Add the new user to the list
+  usersList.push(newUser);
 
-  // Send updated user list to JSONBin
+  // Send the updated user list back to JSONBin
   const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
-    method: "PUT",  // Update the bin
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
     },
-    body: JSON.stringify({ users: usersList }) // Save as an array
+    body: JSON.stringify({ users: usersList }) // Save the list as an array
   });
 
   if (response.ok) {
@@ -203,39 +227,46 @@ async function storeUserData(email, password) {
   } else {
     console.error("Failed to store user data.");
   }
- }
+}
 
-  let signData = {
-    email: regEmail,
-    password: regPassword,
-  };
-  
-  if (regEmail && regPassword) {
-    localStorage.setItem("signData", signData);
-    
-    logPopUp.style.display = "flex";
-    regPop.style.display = "none";
-  }
+async function getUserData() {
+  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
+    method: "GET",
+    headers: {
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2",
+    },
+  });
 
-  if (regEmail && regPassword) {
-    storeUserData(regEmail, regPassword);
+  if (response.ok) {
+    const data = await response.json();
+    return data.users; // Return the users list
+  } else {
+    console.error("Failed to fetch user data.");
+    return [];
   }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 logInBtn.addEventListener("click", async () => {
-  let Data = await getUserData(); // Fetch data from JSONBin
-  //console.log("Fetched data:", Data);
-
+  // Fetch all users from JSONBin
+  let usersList = await getUserData();
   const EmailInput = logEmailInput.value;
   const PasswordInput = logPasswordInput.value;
 
-  if (EmailInput === Data?.email && PasswordInput === Data?.password) {
-    logInBtn.style.background = "green";
-    window.location.href = "https://hulu-movie-app-main.vercel.app/";
+  // Check if the usersList exists and is not empty
+  if (usersList && usersList.length > 0) {
+    // Find if any user matches the email and password
+    const user = usersList.find(user => user.email === EmailInput && user.password === PasswordInput);
+
+    if (user) {
+      logInBtn.style.background = "green"; // Update button style if successful
+      window.location.href = "https://hulu-movie-app-main.vercel.app/"; // Redirect to the main page
+    } else {
+      alert("Invalid email or password");
+    }
   } else {
-    alert("WRONG");
+    alert("No users found in the database");
   }
 });
 
