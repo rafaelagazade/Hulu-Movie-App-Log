@@ -127,7 +127,7 @@ window.addEventListener("load", async () => {
     return; // No user data stored, so do nothing
   }
 
-  storedUser = JSON.parse(storedUser); // Convert string to object
+  //storedUser = JSON.parse(storedUser); // Convert string to object
 
   const apiData = await getUserData(); // Fetch data from API
   if (!apiData) {
