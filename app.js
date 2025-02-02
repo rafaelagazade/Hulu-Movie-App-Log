@@ -128,13 +128,16 @@ window.addEventListener("load", async () => {
   }
 
   // Parse the stored user data to convert it from string to object
-  storedUser = JSON.parse(storedUser);
+  //storedUser = JSON.parse(storedUser);
 
   const apiData = await getUserData(); // Fetch data from API
   if (!apiData || apiData.length === 0) {
     console.error("Failed to fetch API data or no users found.");
     return;
   }
+
+  console.log("Stored user:", storedUser);
+  console.log("API users:", apiData);
 
   // Loop through the list of users from the API and check for a match
   const userMatch = apiData.find(user => user.email === storedUser.email && user.password === storedUser.password);
