@@ -121,16 +121,49 @@ allInput.forEach((e) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
- window.addEventListener("load", async () => {
-  let signCheck = localStorage.getItem("signData");
-  signCheck = JSON.parse(signCheck);
+window.addEventListener("load", async () => {
+  let storedUser = localStorage.getItem("signData");
+  if (!storedUser) {
+    return; // No user data stored, so do nothing
+  }
 
-  if (!signCheck) {
+  storedUser = JSON.parse(storedUser); // Convert string to object
+
+  const apiData = await getUserData(); // Fetch data from API
+  if (!apiData) {
+    console.error("Failed to fetch API data.");
     return;
+  }
+
+  if (storedUser.email === apiData.email && storedUser.password === apiData.password) {
+    console.log("User verified. Redirecting...");
+    window.location.href = "https://hulu-movie-app-main.vercel.app/";
   } else {
-    console.log("User data found in localStorage:", signCheck);
+    console.log("User data does not match API records.");
   }
 });
+
+// Function to fetch user data from JSONBin API
+async function getUserData() {
+  try {
+    const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53/latest", {
+      method: "GET",
+      headers: {
+        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("API request failed");
+    }
+
+    const data = await response.json();
+    return data.record; // JSONBin stores data inside 'record'
+  } catch (error) {
+    console.error("Error fetching API data:", error);
+    return null;
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
