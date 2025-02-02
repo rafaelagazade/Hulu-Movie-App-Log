@@ -302,7 +302,7 @@ regRegBtn.onclick = async () => {
     await storeUserData(regEmail, regPassword);
 
     // Start 5-second countdown before showing success message
-    let countdown = 5;
+    let countdown = 1;
     const countdownInterval = setInterval(() => {
       if (countdown > 0) {
         alert(" WAIT ");
@@ -316,7 +316,7 @@ regRegBtn.onclick = async () => {
 
         alert("Registration successful! You can now log in.");
       }
-    }, 10);
+    },);
   } else {
     alert("Please enter both email and password.");
   }
