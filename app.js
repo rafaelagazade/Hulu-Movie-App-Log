@@ -148,7 +148,16 @@ window.addEventListener("load", async () => {
     user.password === logPassword
   );
 
+  Const sessionData = await getSessionData();
+
+   if (sessionData) {
+    console.log("Session found. User already logged in.");
+    //window.location.href = "https://hulu-movie-app-main.vercel.app/";  // Redirect to home if already logged in
+    //return;
+  }
+
   if (userMatch) {
+    await storeSessionData({ email: logEmail });
     console.log("User verified. Redirecting...");
     window.location.href = "https://hulu-movie-app-main.vercel.app/";
   } else {
@@ -183,10 +192,78 @@ async function getUserData() {
 
 // Call this function when user registers
 
+async function getUserData() {
+  try {
+    const response = await fetch(`https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47/latest`, {
+      method: "GET",
+      headers: {
+        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+      }
+    });
+
+    if (!response.ok) throw new Error("API request failed");
+
+    const data = await response.json();
+    
+    return Array.isArray(data.record.users) ? data.record.users : [];
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    return []; // Return empty array if there's an error
+  }
+}
+
+// Function to store the session (email) in a separate bin
+async function storeSession(email) {
+  // Get existing session data from the session bin
+  let sessionData = await getSessionData();
+  if (!sessionData) sessionData = []; // Initialize session data if empty
+
+  // Add new session (email) to the list
+  sessionData.push({ email });
+
+  // Send updated session data to the SESSION_BIN_ID
+  const response = await fetch(`https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903`, {
+    method: "PUT", // Update the bin with new session data
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+    },
+    body: JSON.stringify({ sessions: sessionData }) // Save session as an array
+  });
+
+  if (response.ok) {
+    console.log("Session data stored successfully!");
+  } else {
+    console.error("Failed to store session data.");
+  }
+}
+
+// Function to get session data from the SESSION_BIN_ID
+async function getSessionData() {
+  try {
+    const response = await fetch(`https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903/latest`, {
+      method: "GET",
+      headers: {
+        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+      }
+    });
+
+    if (!response.ok) throw new Error("API request failed");
+
+    const data = await response.json();
+    
+    return Array.isArray(data.record.sessions) ? data.record.sessions : [];
+  } catch (error) {
+    console.error("Error fetching session data:", error);
+    return []; // Return empty array if there's an error
+  }
+}
+
+// Function to store user data (email and password) in a separate bin
 async function storeUserData(email, password) {
   const newUser = { email, password };
 
-  // Get existing users from the API
+  // Get existing users from the user bin
   let usersList = await getUserData();
   if (!usersList) usersList = []; // Initialize users array if empty
 
@@ -200,9 +277,9 @@ async function storeUserData(email, password) {
   // Add new user to the list
   usersList.push(newUser);
 
-  // Send updated user list back to JSONBin
-  const response = await fetch("https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47", {
-    method: "PUT", // Update the bin with new data
+  // Send updated user data to the USER_BIN_ID
+  const response = await fetch(`https://api.jsonbin.io/v3/b/679ef92dad19ca34f8f85e47`, {
+    method: "PUT", // Update the bin with new user data
     headers: {
       "Content-Type": "application/json",
       "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
@@ -217,39 +294,23 @@ async function storeUserData(email, password) {
   }
 }
 
-async function storeUserSession(email) {
-  try {
-    const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
-      },
-      body: JSON.stringify({ session: { email } }) // Save active session
-    });
-
-    if (response.ok) {
-      console.log("✅ Session stored successfully!");
-    } else {
-      console.error("❌ Failed to store session.");
-    }
-  } catch (error) {
-    console.error("❌ Error storing session:", error);
-  }
-}
-
-// Trigger registration
-regRegBtn.onclick = () => {
-  const regEmail = regEmailInput.value;
-  const regPassword = regPasswordInput.value;
+// Trigger registration when the registration button is clicked
+regBtn.onclick = async () => {
+  const regEmail = regEmailInput.value.trim();
+  const regPassword = regPasswordInput.value.trim();
 
   if (regEmail && regPassword) {
-    // Store user data in JSONBin API
-    storeUserData(regEmail, regPassword);
-
+    // Store session data (email) in the session bin
+    await storeSession(regEmail);
+    
+    // Store user data (email and password) in the user bin
+    await storeUserData(regEmail, regPassword);
+    
     // Display success and hide registration popup
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
+  } else {
+    alert("Please enter both email and password.");
   }
 };
 
