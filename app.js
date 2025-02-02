@@ -189,7 +189,7 @@ async function storeUserData(email, password) {
   usersList.push(newUser); // Add new user to the list
 
   // Send updated user list to JSONBin
-  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
+  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
     method: "PUT",  // Update the bin
     headers: {
       "Content-Type": "application/json",
