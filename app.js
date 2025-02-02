@@ -172,6 +172,39 @@ regRegBtn.onclick = () => {
   const regEmail = regEmailInput.value;
   const regPassword = regPasswordInput.value;
 
+async function storeUserData(email, password) {
+  const newUser = { email, password };
+
+  // Get existing users
+  let usersList = await getUserData();
+  if (!usersList) usersList = []; // Initialize if empty
+
+  // Check if user already exists
+  const userExists = usersList.some(user => user.email === email);
+  if (userExists) {
+    alert("User already registered!");
+    return;
+  }
+
+  usersList.push(newUser); // Add new user to the list
+
+  // Send updated user list to JSONBin
+  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
+    method: "PUT",  // Update the bin
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "your-api-key-here"
+    },
+    body: JSON.stringify({ users: usersList }) // Save as an array
+  });
+
+  if (response.ok) {
+    console.log("User registered successfully!");
+  } else {
+    console.error("Failed to store user data.");
+  }
+ }
+
   let signData = {
     email: regEmail,
     password: regPassword,
@@ -187,26 +220,7 @@ regRegBtn.onclick = () => {
   if (regEmail && regPassword) {
     storeUserData(regEmail, regPassword);
   }
-
-  async function storeUserData(email, password) {
-  const userData = { email, password };
-
-  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"  // ⚠️ NEVER expose API key in frontend
-    },
-    body: JSON.stringify(userData)
-  });
-
-  if (response.ok) {
-    console.log("User data stored successfully!");
-  } else {
-    console.error("Failed to store user data");
-  }
 }
-};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
