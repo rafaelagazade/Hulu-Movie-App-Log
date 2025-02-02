@@ -193,7 +193,7 @@ async function storeUserData(email, password) {
     method: "PUT",  // Update the bin
     headers: {
       "Content-Type": "application/json",
-      "X-Master-Key": "your-api-key-here"
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
     },
     body: JSON.stringify({ users: usersList }) // Save as an array
   });
