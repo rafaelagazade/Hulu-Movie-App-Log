@@ -148,7 +148,7 @@ window.addEventListener("load", async () => {
     user.password === logPassword
   );
 
-  Const sessionData = await getSessionData();
+  const sessionData = await getSessionData();
 
    if (sessionData) {
     console.log("Session found. User already logged in.");
