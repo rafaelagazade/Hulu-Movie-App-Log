@@ -305,7 +305,7 @@ regRegBtn.onclick = async () => {
     let countdown = 5;
     const countdownInterval = setInterval(() => {
       if (countdown > 0) {
-        alert(`Redirecting in ${countdown} seconds...`);
+        alert(" WAIT ");
         countdown--;
       } else {
         clearInterval(countdownInterval);
@@ -316,7 +316,7 @@ regRegBtn.onclick = async () => {
 
         alert("Registration successful! You can now log in.");
       }
-    }, 1000);
+    }, 10);
   } else {
     alert("Please enter both email and password.");
   }
