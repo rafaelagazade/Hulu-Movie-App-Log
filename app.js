@@ -123,25 +123,24 @@ allInput.forEach((e) => {
 
 // Load function: Check user data and verify on page load
 window.addEventListener("load", async () => {
-  let storedUser = localStorage.getItem("signData");
-  if (!storedUser) {
-    return; // No user data stored, so do nothing
+  const logEmail = logEmailInput.value;
+  const logPassword = logPasswordInput.value;
+
+  if (!logEmail || !logPassword) {
+    return; // Do nothing if the email or password fields are empty
   }
 
-  // Parse the stored user data
-  storedUser = JSON.parse(storedUser);
-
   // Fetch the list of users from the API
-  const apiData = await getUserData();
-  if (!apiData || apiData.length === 0) {
+  const usersList = await getUserData();
+  if (!usersList || usersList.length === 0) {
     console.error("No users found in the database.");
     return;
   }
 
   // Loop through the API users to check for a match
-  const userMatch = apiData.find(user => 
-    user.email === storedUser.email && 
-    user.password === storedUser.password
+  const userMatch = usersList.find(user =>
+    user.email === logEmail &&
+    user.password === logPassword
   );
 
   if (userMatch) {
@@ -219,9 +218,6 @@ regRegBtn.onclick = () => {
   const regPassword = regPasswordInput.value;
 
   if (regEmail && regPassword) {
-    // Store user data in localStorage (optional for immediate access)
-    localStorage.setItem("signData", JSON.stringify({ email: regEmail, password: regPassword }));
-    
     // Store user data in JSONBin API
     storeUserData(regEmail, regPassword);
 
@@ -234,14 +230,8 @@ regRegBtn.onclick = () => {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 logInBtn.addEventListener("click", async () => {
-  let storedUser = localStorage.getItem("signData");
-  if (!storedUser) {
-    alert("Please register first.");
-    return;
-  }
-
-  // Parse the stored user data
-  storedUser = JSON.parse(storedUser);
+  const logEmail = logEmailInput.value;
+  const logPassword = logPasswordInput.value;
 
   // Fetch users from the API
   const usersList = await getUserData();
@@ -250,8 +240,8 @@ logInBtn.addEventListener("click", async () => {
     return;
   }
 
-  // Check if any of the users match the stored credentials
-  const userMatch = usersList.find(user => user.email === storedUser.email && user.password === storedUser.password);
+  // Check if any of the users match the entered credentials
+  const userMatch = usersList.find(user => user.email === logEmail && user.password === logPassword);
 
   if (userMatch) {
     console.log("User verified. Redirecting...");
