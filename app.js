@@ -270,7 +270,7 @@ async function storeUserData(email, password) {
 }
 
 // Trigger registration when the registration button is clicked
-regBtn.onclick = async () => {
+regRegBtn.onclick = async () => {
   const regEmail = regEmailInput.value.trim();
   const regPassword = regPasswordInput.value.trim();
 
