@@ -233,11 +233,11 @@ regRegBtn.onclick = () => {
 };
 
 async function storeUserSession(email) {
-  const response = await fetch("https://api.jsonbin.io/v3/b/SESSION_BIN_ID", {
+  const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "X-Master-Key": "YOUR_API_KEY"
+      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
     },
     body: JSON.stringify({ session: { email } }) // Save active session
   });
