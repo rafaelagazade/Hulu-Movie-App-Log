@@ -49,7 +49,7 @@ const loginResBtn = document.querySelector(".responsivePopUp .rp-2");
 const responsivLogIn = document.querySelector(".responsivLogIn");
 
 const API_KEY = "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"; // Replace with your JSONBin API Key
-const BIN_ID = "679ec18ae41b4d34e4828d53"; // Replace with your JSONBin Bin ID
+const BIN_ID = "679eef37e41b4d34e4829eb6"; // Replace with your JSONBin Bin ID
 
 hamburger.addEventListener("click", () => {
   resPop.classList.toggle("active");
@@ -105,16 +105,16 @@ navBe.addEventListener("click", () => {
 
 allInput.forEach((e) => {
   e.addEventListener("keydown", (inp) => {
-    console.log(logEmailInput.value, "email");
-    console.log(logPasswordInput.value, "password");
+    //console.log(logEmailInput.value, "email");
+    //console.log(logPasswordInput.value, "password");
     const emailValue = logEmailInput.value;
     const passwordValue = logPasswordInput.value;
     if (emailValue && passwordValue) {
       logInBtn.style.backgroundColor = "#00ed82";
-      console.log(2);
+      //console.log(2);
     } else {
       logInBtn.style.backgroundColor = "#48494b";
-      console.log(3);
+      //console.log(3);
     }
   });
 });
@@ -146,7 +146,7 @@ window.addEventListener("load", async () => {
 // Function to fetch user data from JSONBin API
 async function getUserData() {
   try {
-    const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53/latest", {
+    const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6/latest", {
       method: "GET",
       headers: {
         "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
@@ -191,7 +191,7 @@ regRegBtn.onclick = () => {
   async function storeUserData(email, password) {
   const userData = { email, password };
 
-  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
+  const response = await fetch("https://api.jsonbin.io/v3/b/679eef37e41b4d34e4829eb6", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -212,7 +212,7 @@ regRegBtn.onclick = () => {
 
 logInBtn.addEventListener("click", async () => {
   let Data = await getUserData(); // Fetch data from JSONBin
-  console.log("Fetched data:", Data);
+  //console.log("Fetched data:", Data);
 
   const EmailInput = logEmailInput.value;
   const PasswordInput = logPasswordInput.value;
