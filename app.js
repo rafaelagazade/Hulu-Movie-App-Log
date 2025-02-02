@@ -119,6 +119,8 @@ allInput.forEach((e) => {
   });
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
  window.addEventListener("load", async () => {
   let signCheck = localStorage.getItem("signData");
   signCheck = JSON.parse(signCheck);
@@ -130,25 +132,7 @@ allInput.forEach((e) => {
   }
 });
 
-// ✅ Store user data in JSONBin
-async function storeUserData(email, password) {
-  const userData = { email, password };
-
-  const response = await fetch("https://api.jsonbin.io/v3/b/679ec18ae41b4d34e4828d53", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"  // ⚠️ NEVER expose API key in frontend
-    },
-    body: JSON.stringify(userData)
-  });
-
-  if (response.ok) {
-    console.log("User data stored successfully!");
-  } else {
-    console.error("Failed to store user data");
-  }
-}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Call this function when user registers
 regRegBtn.onclick = () => {
@@ -198,6 +182,8 @@ regRegBtn.onclick = () => {
 }
 };
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 logInBtn.addEventListener("click", () => {
   let Data = localStorage.getItem("signData");
   Data = JSON.parse(Data);
@@ -217,6 +203,8 @@ logInBtn.addEventListener("click", () => {
     alert("WRONG");
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 logBtn.onclick = () => {
   logPopUp.style.display = "flex";
