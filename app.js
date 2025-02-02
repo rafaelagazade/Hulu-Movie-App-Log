@@ -230,12 +230,8 @@ regRegBtn.onclick = () => {
     logPopUp.style.display = "flex";
     regPop.style.display = "none";
   }
-};
 
-regRegBtn.onclick = async () => {  // ✅ Make function async
-  const regEmail = regEmailInput.value;  // ✅ Get email input
-
-  if (!regEmail) {
+    if (!regEmail) {
     alert("Please enter an email.");
     return;
   }
