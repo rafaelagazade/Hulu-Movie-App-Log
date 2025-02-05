@@ -291,34 +291,6 @@ regRegBtn.onclick = async () => {
  };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-async function updateSessionData(email) {
-  let sessionData = await getSessionData();
-  if (!sessionData) sessionData = []; // Initialize if empty
-
-  // Ensure no duplicate session exists for this email
-  sessionData = sessionData.filter(session => session.email !== email);
-
-  // Add new session
-  sessionData.push({ email });
-
-  // Store updated session in the session bin
-  const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Master-Key": "$2a$10$4iItJb8RZVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
-    },
-    body: JSON.stringify({ sessions: sessionData })
-  });
-
-  if (response.ok) {
-    console.log("Session updated successfully.");
-  } else {
-    console.error("Failed to update session.");
-  }
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 logInBtn.addEventListener("click", async () => {
@@ -337,12 +309,22 @@ logInBtn.addEventListener("click", async () => {
     return;
   }
 
-  // Check if any user matches the entered credentials
+  // Check if user exists
   const userMatch = usersList.find(user => user.email === logEmail && user.password === logPassword);
 
   if (userMatch) {
     console.log("User verified. Updating session and redirecting...");
-    await updateSessionData(logEmail); // Store session data
+
+    // Store session data (email) in session bin
+    await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": "$2a$10$4iItJb8RZVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+      },
+      body: JSON.stringify({ sessions: [{ email: logEmail }] }) // Store only the logged-in email
+    });
+
     window.location.href = "https://hulu-movie-app-main.vercel.app/"; // Redirect to main page
   } else {
     alert("Incorrect email or password.");
