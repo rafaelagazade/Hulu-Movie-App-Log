@@ -320,7 +320,7 @@ logInBtn.addEventListener("click", async () => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "X-Master-Key": "$2a$10$1p8Mfemeqg3dFsUsulY6YuWIXWPGN2qvkOzqP5M2upD9ZCCBWrm0a"
+        "X-Master-Key": "$2a$10$4iItJb8RzVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
       },
       body: JSON.stringify({ sessions: [{ email: logEmail }] }) // Store only the logged-in email
     });
