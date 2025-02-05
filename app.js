@@ -292,23 +292,58 @@ regRegBtn.onclick = async () => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+async function updateSessionData(email) {
+  let sessionData = await getSessionData();
+  if (!sessionData) sessionData = []; // Initialize if empty
+
+  // Ensure no duplicate session exists for this email
+  sessionData = sessionData.filter(session => session.email !== email);
+
+  // Add new session
+  sessionData.push({ email });
+
+  // Store updated session in the session bin
+  const response = await fetch("https://api.jsonbin.io/v3/b/679f1129e41b4d34e482a903", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": "$2a$10$4iItJb8RZVJsw8nIJCh3B.eRCXyjjXxJC2zxmhmaRVZsaHxuw8TO2"
+    },
+    body: JSON.stringify({ sessions: sessionData })
+  });
+
+  if (response.ok) {
+    console.log("Session updated successfully.");
+  } else {
+    console.error("Failed to update session.");
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 logInBtn.addEventListener("click", async () => {
-  const logEmail = logEmailInput.value;
-  const logPassword = logPasswordInput.value;
+  const logEmail = logEmailInput.value.trim();
+  const logPassword = logPasswordInput.value.trim();
+
+  if (!logEmail || !logPassword) {
+    alert("Please enter both email and password.");
+    return;
+  }
 
   // Fetch users from the API
   const usersList = await getUserData();
-  if (!usersList) {
+  if (!usersList || usersList.length === 0) {
     console.error("Failed to fetch user data.");
     return;
   }
 
-  // Check if any of the users match the entered credentials
+  // Check if any user matches the entered credentials
   const userMatch = usersList.find(user => user.email === logEmail && user.password === logPassword);
 
   if (userMatch) {
-    console.log("User verified. Redirecting...");
-    window.location.href = "https://hulu-movie-app-main.vercel.app/";
+    console.log("User verified. Updating session and redirecting...");
+    await updateSessionData(logEmail); // Store session data
+    window.location.href = "https://hulu-movie-app-main.vercel.app/"; // Redirect to main page
   } else {
     alert("Incorrect email or password.");
   }
